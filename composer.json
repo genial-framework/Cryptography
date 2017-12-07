@@ -1,7 +1,6 @@
 {
     "name": "genial-framework/cryptography",
     "type": "library",
-    "description": "A cryptographic component to securly transfer sesitive data throughout the framework.",
     "homepage": "https://github.com/Genial-Framework/Cryptography",
     "license": "BSD-3-Clause",
     "require": {

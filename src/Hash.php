@@ -50,7 +50,7 @@ class Hash
         {
             return true;
         }
-        if (in_array($algorithm, AlgoList::ALGOS, true))
+        if (in_array($algorithm, AlgoList::HASH_ALGOS, true))
         {
             self::$lastAlgorithmSupported($algorithm);
             return true;

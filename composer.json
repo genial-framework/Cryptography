@@ -1,6 +1,7 @@
 {
     "name": "genial-framework/cryptography",
     "type": "library",
+    "description": "A cryptographic component used to encrypt sensitive data and one-way hash passwords.",
     "homepage": "https://github.com/Genial-Framework/Cryptography",
     "license": "BSD-3-Clause",
     "require": {

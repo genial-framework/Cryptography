@@ -12,4 +12,13 @@ namespace Genial\Cryptography;
  */
 class Utils
 {
+    public static function HashHmacAlgos()
+    {
+        if (function_exists('hash_hmac_algos'))
+        {
+            return hash_hmac_algos();
+        }
+        return hash_algos();
+    }
+    
 }

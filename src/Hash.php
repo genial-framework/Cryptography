@@ -10,6 +10,9 @@ namespace Genial\Cryptography;
 use Genial\Cryptography\Exception\UnexpectedValueException;
 use Genial\Cryptography\Option\AlgoList;
 
+/**
+ * Hash.
+ */
 class Hash
 {
     const RAW_OUTPUT = false;

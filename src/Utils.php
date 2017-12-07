@@ -5,4 +5,6 @@
  * @license   <https://github.com/Genial-Framework/Cryptography/blob/master/LICENSE> New BSD License
  */
 namespace Genial\Cryptography;
-
+class Utils
+{
+}

@@ -7,6 +7,9 @@
 
 namespace Genial\Cryptography;
 
+/**
+ * Utils.
+ */
 class Utils
 {
 }

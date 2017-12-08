@@ -12,7 +12,8 @@
     "autoload": {
         "psr-4": {
             "Genial\\Cryptography\\": "src/"
-        }
+        },
+        "files": ["main.bootstrap.php"]
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5"

@@ -8,8 +8,8 @@
 namespace Genial\Cryptography\Exception;
 
 /**
- * DomainException.
+ * RangeException.
  */
-class DomainException extends \DomainException implements ExceptionInterface
+class RangeException extends \RangeException implements ExceptionInterface
 {
 }

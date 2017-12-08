@@ -63,7 +63,7 @@ final class HashHmacTest extends TestCase
     public function testGetOutputSize1()
     {
         $this->expectException(UnexpectedValueException::class);
-        $size = HashHmac::getOutputSize('foo-bar', 'foo-bar');
+        $size = HashHmac::getOutputSize('foo-bar', 'foo-bar', 'randomKey');
     }
   
 }

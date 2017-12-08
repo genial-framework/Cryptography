@@ -43,14 +43,21 @@ class Hash
     {
         if (self::isSupportedAlgo($algorithm))
         {
-            self::$lastAlgorithmSupported($algorithm);
+            self::$lastAlgorithmSupported = $algorithm;
             return mb_strlen(self::cipher($algorithm, 'data', $output), '8bit');
+        }
+        else
+        {
+            throw new UnexpectedValueException(sprintf(
+                '"%s" - "$algorithm" is not supported.',
+                __METHOD__
+            ));
         }
     }
     
     public static function isSupportedAlgo(string $algorithm)
     {
-        if ($algorithm === static::$lastAlgorithmSupported)
+        if ($algorithm === self::$lastAlgorithmSupported)
         {
             return true;
         }

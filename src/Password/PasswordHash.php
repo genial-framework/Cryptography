@@ -8,8 +8,6 @@
 namespace Genial\Cryptography\Password;
 
 use Genial\Cryptography\Exception\InvalidArgumentException;
-use Genial\Cryptography\Option\Password\AlgoList;
-use Genial\Cryptography\Hash;
 
 /**
  * PasswordHash.
@@ -110,6 +108,17 @@ class PasswordHash
                 __METHOD__
             ));
         }
+    }
+ 
+    public static function passwordNeedsRehash(string $hash, string $algo = self::ALGO, array $options = [])
+    {
+        if (isset($options['salt'])) {
+            throw new DomainException(sprintf(
+                '"%s" - The salt option in password_hash() is depercated and is not allowed.',
+                __METHOD__
+            ));
+        }
+        password_needs_rehash($hash, $algo, $options);
     }
     
     public static function verify(string $userInputPassword, string $hash)

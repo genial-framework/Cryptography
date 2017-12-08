@@ -27,7 +27,7 @@ class Hash
         }
         if (self::isSupportedAlgo($hashAlgorithm))
         {
-            self::$lastAlgorithmSupported($hashAlgorithm);
+            self::$lastAlgorithmSupported = $hashAlgorithm;
             return hash($hashAlgorithm, $data, $rawOutput);
         }
         else
@@ -56,7 +56,7 @@ class Hash
         }
         if (in_array($algorithm, AlgoList::HashAlgos(), true))
         {
-            static::$lastAlgorithmSupported = $algorithm;
+            self::$lastAlgorithmSupported = $algorithm;
             return true;
         }
         return false;
@@ -64,12 +64,12 @@ class Hash
     
     public static function clearLastAlgorithmCache()
     {
-        static::$lastAlgorithmSupported = null;
+        self::$lastAlgorithmSupported = null;
     }
  
     public static function getLastSupportedAlgorithm()
     {
-        return static::$lastAlgorithmSupported;
+        return self::$lastAlgorithmSupported;
     }
     
 }

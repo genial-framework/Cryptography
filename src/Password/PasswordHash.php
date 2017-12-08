@@ -56,13 +56,13 @@ class PasswordHash
             if ($memory_cost != MEMORY_COST)
             {
                 $options += [
-                    'memory_cost' => $memory_cost;
+                    'memory_cost' => $memory_cost
                 ];
             }
             if ($cost != TIME_COST)
             {
                 $options += [
-                    'time_cost' => $cost;
+                    'time_cost' => $cost
                 ];
             }
             if ($threads != THREADS)
@@ -87,7 +87,7 @@ class PasswordHash
             if ($cost != COST)
             {
                 $options += [
-                    'cost' => $cost;
+                    'cost' => $cost
                 ];
             }
             if (!empty($options))

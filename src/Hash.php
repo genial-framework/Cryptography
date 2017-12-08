@@ -56,7 +56,7 @@ class Hash
         }
         if (in_array($algorithm, AlgoList::HashAlgos(), true))
         {
-            static::$lastAlgorithmSupported($algorithm);
+            static::$lastAlgorithmSupported = $algorithm;
             return true;
         }
         return false;

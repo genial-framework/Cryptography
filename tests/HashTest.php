@@ -44,7 +44,7 @@ final class HashTest extends TestCase
         Hash::cipher('foo-bar', 'foo-bar');
     }
     
-    public function testCipher2()
+    public function testCipher1()
     {
         $this->assertEquals(Hash::cipher('sha512', 'foo-bar'), '2f029b0cfec557c0172a1eba3d628c7d6e3ff37d43a3014e942251abb785541e8d83a4bd7e6b415f93c0823343a675283c6443b470e2bdba09e04717c81acfe3');   
     }
@@ -52,6 +52,12 @@ final class HashTest extends TestCase
     public function testGetOutputSize()
     {
         $this->assertEquals(Hash::getOutputSize('sha512', 'foo-bar'), 128);
+    }
+ 
+    public function testGetOutputSize1()
+    {
+        $this->expectException(UnexpectedValueException::class);
+        $size = Hash::getOutputSize('foo-bar', 'foo-bar');
     }
   
 }

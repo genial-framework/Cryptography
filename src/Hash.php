@@ -19,7 +19,7 @@ class Hash
     
     protected static $lastAlgorithmSupported = null;
     
-    public static function cipher(string $hashAlgorithm, string $data, $rawOutput = self::RAW_OUTPUT)
+    public static function cipher(string $hashAlgorithm, string $data, $rawOutput = static::RAW_OUTPUT)
     {
         if (self::isSupportedAlgo($hashAlgorithm))
         {
@@ -46,13 +46,13 @@ class Hash
     
     public static function isSupportedAlgo(string $algorithm)
     {
-        if ($algorithm === self::$lastAlgorithmSupported)
+        if ($algorithm === static::$lastAlgorithmSupported)
         {
             return true;
         }
         if (in_array($algorithm, AlgoList::HashAlgos(), true))
         {
-            self::$lastAlgorithmSupported($algorithm);
+            static::$lastAlgorithmSupported($algorithm);
             return true;
         }
         return false;
@@ -60,12 +60,12 @@ class Hash
     
     public static function clearLastAlgorithmCache()
     {
-        self::$lastAlgorithmSupported = null;
+        static::$lastAlgorithmSupported = null;
     }
  
     public static function getLastSupportedAlgorithm()
     {
-        return self::$lastAlgorithmSupported;
+        return static::$lastAlgorithmSupported;
     }
     
 }

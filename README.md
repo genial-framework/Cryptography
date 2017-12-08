@@ -13,6 +13,8 @@ composer require genial-framework/cryptography
 
 We suggest you use composer as it is quicker and easier. You can direct download the package, but if you do that then you need to create an autoloader to load all the files.
 
+### Reporting Security Leaks
+
 -------
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Documentation is at https://github.com/Genial-Framework/Cryptography/tree/master/docs

@@ -16,7 +16,11 @@
         "files": ["main.bootstrap.php"]
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.5"
+        "phpunit/phpunit": "^6.5",
+        "ext-libsodium": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-sodium": "*"
     },
     "suggest": {
         "ext-sodium": "*"   

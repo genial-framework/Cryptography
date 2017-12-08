@@ -31,7 +31,7 @@ class PasswordHash
         if (empty($plainTextPassword) || $plainTextPassword == '')
         {
             throw new UnexpectedValueException(sprintf(
-                '"%s" - "$plainTextPassword" is empty.'
+                '"%s" - "$plainTextPassword" is empty.',
                 __METHOD__
             ));
         }

@@ -17,7 +17,7 @@ class Hash
 {
     const RAW_OUTPUT = false;
     
-    protected static $lastAlgorithmSupported;
+    protected static $lastAlgorithmSupported = null;
     
     public static function cipher(string $hashAlgorithm, string $data, $rawOutput = self::RAW_OUTPUT)
     {
@@ -61,6 +61,11 @@ class Hash
     public static function clearLastAlgorithmCache()
     {
         self::$lastAlgorithmSupported = null;
+    }
+ 
+    public static function getLastSupportedAlgorithm()
+    {
+        return self::$lastAlgorithmSupported;
     }
     
 }

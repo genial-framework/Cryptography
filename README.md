@@ -7,6 +7,7 @@ This dependent provides cryptographic tools to securely hash passwords, encrypt 
 
 ### Installation
 
+-------
 ```
 composer require genial-framework/cryptography
 ```

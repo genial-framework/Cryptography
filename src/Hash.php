@@ -19,8 +19,12 @@ class Hash
     
     protected static $lastAlgorithmSupported = null;
     
-    public static function cipher(string $hashAlgorithm, string $data, $rawOutput = static::RAW_OUTPUT)
+    public static function cipher(string $hashAlgorithm, string $data, bool $rawOutput = null)
     {
+        if (is_null($rawOutput))
+        {
+            $rawOutput = static::RAW_OUTPUT;
+        }
         if (self::isSupportedAlgo($hashAlgorithm))
         {
             self::$lastAlgorithmSupported($hashAlgorithm);

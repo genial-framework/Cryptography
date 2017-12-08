@@ -16,7 +16,7 @@
         "files": ["main.bootstrap.php"]
     },
     "autoload-dev": {
-        "files": ["main.bootstrap.php"]
+        "files": ["main.bootstrap.tests.php"]
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5"

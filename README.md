@@ -3,6 +3,7 @@
 ### Genial/Cryptography
 
 -------
+This dependent provides cryptographic tools to securely hash passwords, encrypt sensitive data using the common algorithms such as TripleDES, RSA, Twofish, and many more. 
 
 -------
 - File issues at https://github.com/Genial-Framework/Cryptography/issues

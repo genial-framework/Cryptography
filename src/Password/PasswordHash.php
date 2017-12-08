@@ -9,6 +9,7 @@ namespace Genial\Cryptography\Password;
 
 use Genial\Cryptography\Exception\UnexpectedValueException;
 use Genial\Cryptography\Exception\InvalidArgumentException;
+use Genial\Cryptography\Exception\RangeException;
 
 /**
  * PasswordHash.
@@ -27,24 +28,24 @@ class PasswordHash
     
     public static function cipher(string $plainTextPassword, $const_algorithm = self::ALGO, $cost = self::COST, $memory_cost = self::MEMORY_COST, $threads = self::THREADS)
     {
-        if (!is_int($cost))
+        if (empty($plainTextPassword) || $plainTextPassword == '')
         {
-            throw new InvalidArgumentException(sprintf(
-                '"%s" - "$cost" is not an integer.',
+            throw new UnexpectedValueException(sprintf(
+                '"%s" - "$plainTextPassword" is empty.'
                 __METHOD__
             ));
         }
-        if (!is_int($memory_cost))
+        if (!is_int($cost) || !is_int($memory_cost) || !is_int($threads))
         {
             throw new InvalidArgumentException(sprintf(
-                '"%s" - "$memory_cost" is not an integer.',
+                '"%s" - "$cost" or "$memory_cost" or "$threads" is not an integer.',
                 __METHOD__
             ));
         }
-        if (!is_int($threads))
+        if ($cost < 1 || $memory_cost < 1 || $threads < 1)
         {
-            throw new InvalidArgumentException(sprintf(
-                '"%s" - "$threads" is not an integer.',
+            throw new RangeException(sprintf(
+                '"%s" - "$cost" or "$memory_cost" or "$threads" is below 1.',
                 __METHOD__
             ));
         }

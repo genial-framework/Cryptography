@@ -40,7 +40,7 @@ final class HashHmacTest extends TestCase
     
     public function testClearLastAlgorithmCache()
     {
-        Hash::clearLastAlgorithmCache();
+        HashHmac::clearLastAlgorithmCache();
         $this->assertEquals(HashHmac::getLastSupportedAlgorithm(), null);
     }
     

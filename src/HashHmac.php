@@ -42,6 +42,13 @@ class HashHmac
             self::$lastAlgorithmSupported = $algorithm;
             return mb_strlen(self::cipher($algorithm, 'data', $key, $output), '8bit');
         }
+        else
+        {
+            throw new UnexpectedValueException(sprintf(
+                '"%s" - "$algorithm" is not supported.',
+                __METHOD__
+            ));
+        }
     }
     
     public static function isSupportedAlgo(string $algorithm)

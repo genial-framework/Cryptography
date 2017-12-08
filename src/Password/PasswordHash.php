@@ -117,7 +117,7 @@ class PasswordHash
         if (empty($hash) || $hash == '')
         {
             throw new UnexpectedValueException(sprintf(
-                '"%s" - "$hash" is empty.'
+                '"%s" - "$hash" is empty.',
                 __METHOD__
             ));
         }
@@ -132,7 +132,7 @@ class PasswordHash
         if (empty($hash) || $hash == '')
         {
             throw new UnexpectedValueException(sprintf(
-                '"%s" - "$hash" is empty.'
+                '"%s" - "$hash" is empty.',
                 __METHOD__
             ));
         }
@@ -146,14 +146,14 @@ class PasswordHash
         if (empty($userInputPassword) || $userInputPassword == '')
         {
             throw new UnexpectedValueException(sprintf(
-                '"%s" - "$userInputPassword" is empty.'
+                '"%s" - "$userInputPassword" is empty.',
                 __METHOD__
             ));
         }
         if (empty($hash) || $hash == '')
         {
             throw new UnexpectedValueException(sprintf(
-                '"%s" - "$hash" is empty.'
+                '"%s" - "$hash" is empty.',
                 __METHOD__
             ));
         }

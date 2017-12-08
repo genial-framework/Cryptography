@@ -48,11 +48,6 @@ final class HashTest extends TestCase
     {
         $this->assertEquals(Hash::cipher('sha512', 'foo-bar'), '2f029b0cfec557c0172a1eba3d628c7d6e3ff37d43a3014e942251abb785541e8d83a4bd7e6b415f93c0823343a675283c6443b470e2bdba09e04717c81acfe3');   
     }
-    
-    public function testCipher3()
-    {
-        $this->assertEquals(Hash::cipher('sha512', 'foo-bar', true), '/���W�*�=b�}n?�}C�N�"Q���T����~kA_���3C�u(');   
-    }
   
 }
 

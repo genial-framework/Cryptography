@@ -18,30 +18,30 @@ final class HashHmacTest extends TestCase
     public function testIsSupportedAlgo()
     {
         $algorithm = 'sha512';
-        $this->assertEquals(Hash::isSupportedAlgo($algorithm), true);
+        $this->assertEquals(HashHmac::isSupportedAlgo($algorithm), true);
     }
  
     public function testIsSupportedAlgo1()
     {
         $algorithm = 'foo-bar';
-        $this->assertEquals(Hash::isSupportedAlgo($algorithm), false);
+        $this->assertEquals(HashHmac::isSupportedAlgo($algorithm), false);
     }
  
     public function testIsSupportedAlgo2()
     {
         $algorithm = 'sha512';
-        $this->assertEquals(Hash::isSupportedAlgo($algorithm), true);
+        $this->assertEquals(HashHmac::isSupportedAlgo($algorithm), true);
     }
     
     public function testGetLastSupportedAlgorithm()
     {
-        $this->assertEquals(Hash::getLastSupportedAlgorithm(), 'sha512');
+        $this->assertEquals(HashHmac::getLastSupportedAlgorithm(), 'sha512');
     }
     
     public function testClearLastAlgorithmCache()
     {
         Hash::clearLastAlgorithmCache();
-        $this->assertEquals(Hash::getLastSupportedAlgorithm(), null);
+        $this->assertEquals(HashHmac::getLastSupportedAlgorithm(), null);
     }
     
     public function testCipher()

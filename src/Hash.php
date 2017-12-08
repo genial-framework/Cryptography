@@ -19,12 +19,8 @@ class Hash
     
     protected static $lastAlgorithmSupported = null;
     
-    public static function cipher(string $hashAlgorithm, string $data, bool $rawOutput = null)
+    public static function cipher(string $hashAlgorithm, string $data, $rawOutput = self::RAW_OUTPUT)
     {
-        if (is_null($rawOutput))
-        {
-            $rawOutput = static::RAW_OUTPUT;
-        }
         if (self::isSupportedAlgo($hashAlgorithm))
         {
             self::$lastAlgorithmSupported = $hashAlgorithm;
@@ -44,7 +40,7 @@ class Hash
         if (self::isSupportedAlgo($algorithm))
         {
             self::$lastAlgorithmSupported = $algorithm;
-            return mb_strlen(self::cipher($algorithm, 'data', $output), '8bit');
+            return mb_strlen(self::cipher($algorithm, $hash, $rawOutput), '8bit');
         }
         else
         {

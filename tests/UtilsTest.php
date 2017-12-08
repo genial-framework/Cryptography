@@ -12,9 +12,9 @@ use PHPUnit\Framework\TestCase;
 /**
  * UtilsTest.
  */
-class UtilsTest extends TestCase
+final class UtilsTest extends TestCase
 {
-    function testHashHmacAlgos()
+    public function testHashHmacAlgos()
     {
         if (!version_compare(PHP_VERSION, '7.2.0', '>='))
         {
@@ -23,7 +23,7 @@ class UtilsTest extends TestCase
         $this->assertEquals(true, true);
     }
     
-    function testHashHmacAlgos1()
+    public function testHashHmacAlgos1()
     {
         if (version_compare(PHP_VERSION, '7.2.0', '>='))
         {

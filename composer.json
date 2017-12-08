@@ -17,6 +17,9 @@
     "require-dev": {
         "phpunit/phpunit": "^6.5"
     },
+    "suggest": {
+        "ext-sodium": "*"   
+    }
     "scripts": {
         "test": "./vendor/bin/phpunit"
     },

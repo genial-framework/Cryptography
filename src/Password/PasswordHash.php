@@ -7,6 +7,7 @@
  
 namespace Genial\Cryptography\Password;
 
+use Genial\Cryptography\Exception\UnexpectedValueException;
 use Genial\Cryptography\Exception\InvalidArgumentException;
 
 /**

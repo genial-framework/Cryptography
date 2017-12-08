@@ -7,6 +7,8 @@
  
 namespace Genial\Cryptography\Option;
 
+use Genial\Cryptography\Utils;
+
 /**
  * AlgoList.
  */

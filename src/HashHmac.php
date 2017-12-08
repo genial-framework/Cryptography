@@ -23,7 +23,7 @@ class HashHmac
     {
         if (self::isSupportedAlgo($hashAlgorithm))
         {
-            self::$lastAlgorithmSupported($hashAlgorithm);
+            self::$lastAlgorithmSupported = $hashAlgorithm;
             return hash_hmac($hashAlgorithm, $data, $key, $rawOutput);
         }
         else
@@ -39,7 +39,7 @@ class HashHmac
     {
         if (self::isSupportedAlgo($algorithm))
         {
-            self::$lastAlgorithmSupported($algorithm);
+            self::$lastAlgorithmSupported = $algorithm;
             return mb_strlen(self::cipher($algorithm, 'data', $key, $output), '8bit');
         }
     }
@@ -52,7 +52,7 @@ class HashHmac
         }
         if (in_array($algorithm, AlgoList::HashHmacAlgos(), true))
         {
-            self::$lastAlgorithmSupported($algorithm);
+            self::$lastAlgorithmSupported = $algorithm;
             return true;
         }
         return false;
@@ -61,6 +61,11 @@ class HashHmac
     public static function clearLastAlgorithmCache()
     {
         self::$lastAlgorithmSupported = null;
+    }
+ 
+    public static function getLastSupportedAlgorithm()
+    {
+        return self::$lastAlgorithmSupported;
     }
     
 }

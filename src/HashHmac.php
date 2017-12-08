@@ -40,7 +40,7 @@ class HashHmac
         if (self::isSupportedAlgo($algorithm))
         {
             self::$lastAlgorithmSupported = $algorithm;
-            return mb_strlen(self::cipher($algorithm, 'data', $key, $output), '8bit');
+            return mb_strlen(self::cipher($algorithm, $hash, $key, $rawOutput), '8bit');
         }
         else
         {

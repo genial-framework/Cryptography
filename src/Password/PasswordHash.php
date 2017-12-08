@@ -53,19 +53,19 @@ class PasswordHash
         {
             $options = [
             ];
-            if ($memory_cost != MEMORY_COST)
+            if ($memory_cost != self::MEMORY_COST)
             {
                 $options += [
                     'memory_cost' => $memory_cost
                 ];
             }
-            if ($cost != TIME_COST)
+            if ($cost != self::TIME_COST)
             {
                 $options += [
                     'time_cost' => $cost
                 ];
             }
-            if ($threads != THREADS)
+            if ($threads != self::THREADS)
             {
                 $options += [
                     'threads' => $threads
@@ -84,7 +84,7 @@ class PasswordHash
         {
             $options = [
             ];
-            if ($cost != COST)
+            if ($cost != self::COST)
             {
                 $options += [
                     'cost' => $cost

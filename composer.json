@@ -19,7 +19,7 @@
     },
     "suggest": {
         "ext-sodium": "*"   
-    }
+    },
     "scripts": {
         "test": "./vendor/bin/phpunit"
     },

@@ -13,22 +13,6 @@ composer require genial-framework/cryptography
 
 We suggest you use composer as it is quicker and easier. You can direct download the package, but if you do that then you need to create an autoloader to load all the files.
 
-### Basic Usage
-
-Using genial/cryptography is easy first you must require composer autoloader.
-
-```
-<?php
-
-require __DIR__ . '/vendor/autoload.php';
-
-?>
-```
-
-### Reporting Security Leaks
-
-If you have found a security leak in this dependent do not post the exploit as other people will know about it, you should email this exploit to <nenglish0820@outlook> and when we have verified the leak you will send you an email saying that we are working on patching this leak. In the next dependent release it will be patch.
-
 -------
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Documentation is at https://github.com/Genial-Framework/Cryptography/tree/master/docs

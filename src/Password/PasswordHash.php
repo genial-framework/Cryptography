@@ -111,15 +111,31 @@ class PasswordHash
         }
     }
  
-    public static function passwordNeedsRehash(string $hash, $algo = self::ALGO, array $options = [])
+    public static function rehash(string $hash)
     {
-        if (isset($options['salt'])) {
-            throw new DomainException(sprintf(
-                '"%s" - The salt option in password_hash() is depercated and is not allowed.',
+        if (empty($hash) || $hash == '')
+        {
+            throw new UnexpectedValueException(sprintf(
+                '"%s" - "$hash" is empty.'
                 __METHOD__
             ));
         }
+        $hashInfo = self::getInfo($hash);
+        $algo = $hashInfo['algo'];
+        $options = $hashInfo['options'];
         password_needs_rehash($hash, $algo, $options);
+    }
+    
+    public static function getInfo(string $hash)
+    {
+        if (empty($hash) || $hash == '')
+        {
+            throw new UnexpectedValueException(sprintf(
+                '"%s" - "$hash" is empty.'
+                __METHOD__
+            ));
+        }
+        return password_get_info($hash);
     }
     
     public static function verify(string $userInputPassword, string $hash)
@@ -142,5 +158,5 @@ class PasswordHash
         }
         return password_verify($userInputPassword, $hash);
     }
-    
+ 
 }

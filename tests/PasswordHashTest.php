@@ -98,7 +98,7 @@ final class PasswordHashTest extends TestCase
             $hash = PasswordHash::cipher('foo-bar', PASSWORD_ARGON2I);
             $state = PasswordHash::verify('', $hash);
         }
-        throw new InvalidArgumentException();
+        throw new UnexpectedValueException();
     }
   
     public function testVerify6()

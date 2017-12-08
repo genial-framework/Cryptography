@@ -15,6 +15,8 @@ We suggest you use composer as it is quicker and easier. You can direct download
 
 ### Reporting Security Leaks
 
+If you have found a security leak in this dependent do not post the exploit as other people will know about it, you should email this exploit to <nenglish0820@outlook> and when we have verified the leak you will send you an email saying that we are working on patching this leak. In the next dependent release it will be patch.
+
 -------
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Documentation is at https://github.com/Genial-Framework/Cryptography/tree/master/docs

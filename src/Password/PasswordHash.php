@@ -123,6 +123,22 @@ class PasswordHash
     
     public static function verify(string $userInputPassword, string $hash)
     {
+        $userInputPassword = trim($userInputPassword);
+        $hash = trim($hash);
+        if (empty($userInputPassword) || $userInputPassword == '')
+        {
+            throw new UnexpectedValueException(sprintf(
+                '"%s" - "$userInputPassword" is empty.'
+                __METHOD__
+            ));
+        }
+        if (empty($hash) || $hash == '')
+        {
+            throw new UnexpectedValueException(sprintf(
+                '"%s" - "$hash" is empty.'
+                __METHOD__
+            ));
+        }
         return password_verify($userInputPassword, $hash);
     }
     

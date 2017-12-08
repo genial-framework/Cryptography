@@ -68,7 +68,7 @@ class PasswordHash
             if ($threads != THREADS)
             {
                 $options += [
-                    'threads' => $cost;
+                    'threads' => $threads
                 ];
             }
             if (!empty($options))

@@ -30,7 +30,7 @@ final class HashTest extends TestCase
     public function testIsSupportedAlgo2()
     {
         $algorithm = 'sha512';
-        $this->assertEquals(Hash::isSupportedAlgo($algorithm), false);
+        $this->assertEquals(Hash::isSupportedAlgo($algorithm), true);
     }
     
     public function testGetLastSupportedAlgorithm()

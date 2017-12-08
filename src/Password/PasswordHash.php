@@ -110,7 +110,7 @@ class PasswordHash
         }
     }
  
-    public static function passwordNeedsRehash(string $hash, string $algo = self::ALGO, array $options = [])
+    public static function passwordNeedsRehash(string $hash, $algo = self::ALGO, array $options = [])
     {
         if (isset($options['salt'])) {
             throw new DomainException(sprintf(

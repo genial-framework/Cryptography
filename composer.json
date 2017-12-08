@@ -17,6 +17,9 @@
     "require-dev": {
         "phpunit/phpunit": "^6.5"
     },
+    "autoload-dev": {
+        "files": ["main.bootstrap.php"]
+    },
     "scripts": {
         "test": "./vendor/bin/phpunit"
     },

@@ -18,9 +18,13 @@ We suggest you use composer as it is quicker and easier. You can direct download
 
 -------
 
+Our cryptography component supports all the top encryption algorithms like TripleDES, RSA, Twofish, and much more. For hashing we implement the security practices possible to provide you extensive security. Here is a simple encytion method using TripleDES with OpenSSL, while not using Mcrypt because it hs been deprecated.
+
 ```
 <?php
-// Composer autoload
+
+use Genial\Cryptography;
+
 
 ```
 

@@ -20,37 +20,36 @@ We suggest you use composer as it is quicker and easier. You can direct download
 
 Our cryptography component supports all the top encryption algorithms like TripleDES, RSA, Twofish, and much more. We implement the security practices possible to provide you with extensive security. Here is a simple encytion method using RSA with OpenSSL, while not using Mcrypt because it hs been deprecated.
 
-```
-<?php
+    <?php
 
-use Genial\Cryptography\Adapter\OpenSSL;
-use Genial\Cryptography\Encryption\TripleDES;
+    use Genial\Cryptography\Adapter\OpenSSL;
+    use Genial\Cryptography\Encryption\TripleDES;
 
-/* Initialize the RSA encryption algo using the openssl adapter */
-$RSA->addAdapter(new OpenSSL());
+    /* Initialize the RSA encryption algo using the openssl adapter */
+    $RSA->addAdapter(new OpenSSL());
 
-/* Set The Key Pair */
-$RSA->setKeyPair(
+    /* Set The Key Pair */
+    $RSA->setKeyPair(
 
-    /* Digest Algo */
-    'sha256',
+        /* Digest Algo */
+        'sha256',
     
-    /* Private Key Bits */
-    '1024',
+        /* Private Key Bits */
+        '1024',
     
-    /* Private Key Type */
-    OPENSSL_KEYTYPE_RSA
+        /* Private Key Type */
+        OPENSSL_KEYTYPE_RSA
     
-);
+    );
 
-/* Encrypt Text */
-$encrypted = $RSA->encrypt('Hello world');
+    /* Encrypt Text */
+    $encrypted = $RSA->encrypt('Hello world');
 
-echo $encrypted;
+    echo $encrypted;
 
-$decrypted = $RSA->decrypt($encrypted);
+    /* Decrypt Text */
+    $decrypted = $RSA->decrypt($encrypted);
 
-```
 
 ### To Do
 

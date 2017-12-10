@@ -14,6 +14,8 @@ composer require genial-framework/cryptography
 
 We suggest you use composer as it is quicker and easier. You can direct download the package, but if you do that then you need to create an autoloader to load all the files.
 
+### New Custom Hashing & Encryption Algorithms by Genial
+
 ### Links
 
 -------

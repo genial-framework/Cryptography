@@ -16,10 +16,11 @@ We suggest you use composer as it is quicker and easier. You can direct download
 
 ### New Custom Hashing & Encryption Algorithms by Genial
 
-### To Do In 2.0.0
+### To Do
 
 -------
 - Implement the new Argon2 hashing algorithm
+- Implement custom algorithms by Genial (Vero1, and Lovell1)
 
 ### Links
 

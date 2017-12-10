@@ -18,7 +18,7 @@ class PasswordHash
 {
     const ALGO = PASSWORD_BCRYPT;
  
-    const COST = 11;
+    const COST = null;
  
     public static function cipher(string $plainTextPassword, $const_algorithm = self::ALGO, $cost = self::COST)
     {
@@ -29,14 +29,14 @@ class PasswordHash
                 __METHOD__
             ));
         }
-        if (!is_int($cost))
+        if (!is_int($cost) && !is_null($cost))
         {
             throw new InvalidArgumentException(sprintf(
                 '"%s" - "$cost" is not an integer.',
                 __METHOD__
             ));
         }
-        if ($cost < 1)
+        if ($cost < 1 && !is_null($cost))
         {
             throw new RangeException(sprintf(
                 '"%s" - "$cost" is below 1.',

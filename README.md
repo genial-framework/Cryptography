@@ -45,11 +45,15 @@ Our cryptography component supports all the top encryption algorithms like Tripl
     /* Encrypt Text */
     $encrypted = $RSA->encrypt('Hello world');
 
-    echo $encrypted;
+    echo 'Encrypted Text <br />-----------------<br />';
+    echo $encrypted . '<br />-----------------<br />';
 
     /* Decrypt Text */
     $decrypted = $RSA->decrypt($encrypted);
 
+    echo 'Decrypted Text <br />-----------------<br />';
+    echo $decrypted
+    
     ?>
 
 ### To Do

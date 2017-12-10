@@ -3,7 +3,7 @@
 ### Genial/Cryptography
 
 -------
-This dependent provides cryptographic tools to securely hash passwords, encrypt sensitive data using the common algorithms such as TripleDES, RSA, Twofish, and many more. This dependent only supports PHP 7 or higher so if you are using PHP 5.* please consider upgrading to the latest stable version of php which is PHP 7.2.0. This dependent is open to anybody that wants to contribute <https://github.com/Genial-Framework/Cryptography/blob/master/CONTRIBUTING.md>.
+This dependent provides cryptographic tools to securely hash passwords, encrypt sensitive data using the common algorithms such as RSA, Blowfish, Twofish, and many more. This dependent only supports PHP 7 or higher so if you are using PHP 5.* please consider upgrading to the latest stable version of php which is PHP 7.2.0. This dependent is open to anybody that wants to contribute <https://github.com/Genial-Framework/Cryptography/blob/master/CONTRIBUTING.md>.
 
 ### Installation
 
@@ -18,13 +18,37 @@ We suggest you use composer as it is quicker and easier. You can direct download
 
 -------
 
-Our cryptography component supports all the top encryption algorithms like TripleDES, RSA, Twofish, and much more. For hashing we implement the security practices possible to provide you extensive security. Here is a simple encytion method using TripleDES with OpenSSL, while not using Mcrypt because it hs been deprecated.
+Our cryptography component supports all the top encryption algorithms like TripleDES, RSA, Twofish, and much more. We implement the security practices possible to provide you with extensive security. Here is a simple encytion method using RSA with OpenSSL, while not using Mcrypt because it hs been deprecated.
 
 ```
 <?php
 
-use Genial\Cryptography;
+use Genial\Cryptography\Adapter\OpenSSL;
+use Genial\Cryptography\Encryption\TripleDES;
 
+/* Initialize the RSA encryption algo using the openssl adapter */
+$RSA->addAdapter(new OpenSSL());
+
+/* Set The Key Pair */
+$RSA->setKeyPair(
+
+    /* Digest Algo */
+    'sha256',
+    
+    /* Private Key Bits */
+    '1024',
+    
+    /* Private Key Type */
+    OPENSSL_KEYTYPE_RSA
+    
+);
+
+/* Encrypt Text */
+$encrypted = $RSA->encrypt('Hello world');
+
+echo $encrypted;
+
+$decrypted = $RSA->decrypt($encrypted);
 
 ```
 

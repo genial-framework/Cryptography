@@ -18,6 +18,9 @@ We suggest you use composer as it is quicker and easier. You can direct download
 
 ### To Do In 2.0.0
 
+-------
+- Implement the new Argon2 hashing algorithm
+
 ### Links
 
 -------

@@ -20,13 +20,7 @@ class PasswordHash
  
     const COST = 11;
  
-    const TIME_COST = PASSWORD_ARGON2_DEFAULT_TIME_COST;
- 
-    const MEMORY_COST = PASSWORD_ARGON2_DEFAULT_MEMORY_COST;
- 
-    const THREADS = PASSWORD_ARGON2_DEFAULT_THREADS;
-    
-    public static function cipher(string $plainTextPassword, $const_algorithm = self::ALGO, $cost = self::COST, $memory_cost = self::MEMORY_COST, $threads = self::THREADS)
+    public static function cipher(string $plainTextPassword, $const_algorithm = self::ALGO, $cost = self::COST)
     {
         if (empty($plainTextPassword) || $plainTextPassword == '')
         {
@@ -49,38 +43,7 @@ class PasswordHash
                 __METHOD__
             ));
         }
-        if (defined('PASSWORD_ARGON2I') && $const_algorithm == PASSWORD_ARGON2I)
-        {
-            $options = [
-            ];
-            if ($memory_cost != self::MEMORY_COST)
-            {
-                $options += [
-                    'memory_cost' => $memory_cost
-                ];
-            }
-            if ($cost != self::TIME_COST)
-            {
-                $options += [
-                    'time_cost' => $cost
-                ];
-            }
-            if ($threads != self::THREADS)
-            {
-                $options += [
-                    'threads' => $threads
-                ];
-            }
-            if (!empty($options))
-            {
-                return password_hash($plainTextPassword, $const_algorithm, $options);
-            }
-            else
-            {
-                return password_hash($plainTextPassword, $const_algorithm);
-            }
-        }
-        elseif ($const_algorithm = PASSWORD_BCRYPT)
+        if ($const_algorithm = PASSWORD_BCRYPT)
         {
             $options = [
             ];

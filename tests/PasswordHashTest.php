@@ -27,13 +27,37 @@ final class PasswordHashTest extends TestCase
     public function testCipher1()
     {
         $this->expectException(InvalidArgumentException::class);
-        $state = PasswordHash::cipher('hello-world', PASSWORD_BCRYPT, 'test');
+        $state = PasswordHash::cipher('hello-world', PASSWORD_BCRYPT, false);
     }
  
     public function testCipher2()
     {
         $this->expectException(RangeException::class);
         $state = PasswordHash::cipher('hello-world', PASSWORD_BCRYPT, 0);
+    }
+ 
+    public function testCipher3()
+    {
+         $hash = PasswordHash::cipher('foo-bar', PASSWORD_DEFAULT);
+         $this->assertEquals(is_string($hash), true);
+    }
+ 
+    public function testCipher4()
+    {
+        $this->expectException(UnexpectedValueException::class);
+        $state = PasswordHash::cipher('hello-world', 'test', 10);
+    }
+ 
+    public function testCipher5()
+    {
+        $state = PasswordHash::cipher('hello-world', PASSWORD_BCRYPT, null);
+        $this->assertEquals(is_string($state), true);
+    }
+ 
+    public function testCipher6()
+    {
+        $state = PasswordHash::cipher('hello-world', PASSWORD_BCRYPT, 20);
+        $this->assertEquals(is_string($state), true);
     }
   
     public function testGetInfo()

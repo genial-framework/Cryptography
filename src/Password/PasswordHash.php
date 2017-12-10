@@ -43,7 +43,7 @@ class PasswordHash
                 __METHOD__
             ));
         }
-        if ($const_algorithm = PASSWORD_BCRYPT)
+        if ($const_algorithm == PASSWORD_BCRYPT)
         {
             $options = [
             ];
@@ -62,7 +62,7 @@ class PasswordHash
                 return password_hash($plainTextPassword, $const_algorithm);
             }
         }
-        elseif ($const_algorithm = PASSWORD_DEFAULT)
+        elseif ($const_algorithm == PASSWORD_DEFAULT)
         {
             return password_hash($plainTextPassword, $const_algorithm);
         }

@@ -50,6 +50,7 @@ Our cryptography component supports all the top encryption algorithms like Tripl
     /* Decrypt Text */
     $decrypted = $RSA->decrypt($encrypted);
 
+    ?>
 
 ### To Do
 

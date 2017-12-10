@@ -32,14 +32,14 @@ class PasswordHash
         if (!is_int($cost))
         {
             throw new InvalidArgumentException(sprintf(
-                '"%s" - "$cost" or "$memory_cost" or "$threads" is not an integer.',
+                '"%s" - "$cost" is not an integer.',
                 __METHOD__
             ));
         }
         if ($cost < 1)
         {
             throw new RangeException(sprintf(
-                '"%s" - "$cost" or "$memory_cost" or "$threads" is below 1.',
+                '"%s" - "$cost" is below 1.',
                 __METHOD__
             ));
         }

@@ -16,6 +16,8 @@ We suggest you use composer as it is quicker and easier. You can direct download
 
 ### New Custom Hashing & Encryption Algorithms by Genial
 
+### What To Expect In Version 2.0.0
+
 ### Links
 
 -------

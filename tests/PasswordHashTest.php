@@ -18,7 +18,23 @@ use PHPUnit\Framework\TestCase;
  */
 final class PasswordHashTest extends TestCase
 {
-    
+    public function testCipher()
+    {
+        $this->expectException(UnexpectedValueException::class);
+        $state = PasswordHash::cipher('');
+    }
+ 
+    public function testCipher1()
+    {
+        $this->expectException(InvalidArgumentException::class);
+        $state = PasswordHash::cipher('hello-world', PASSWORD_BCRYPT, 'test');
+    }
+ 
+    public function testCipher2()
+    {
+        $this->expectException(RangeException::class);
+        $state = PasswordHash::cipher('hello-world', PASSWORD_BCRYPT, 0);
+    }
   
     public function testGetInfo()
     {

@@ -4,8 +4,8 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 
 -------
 ## Prerequisites
-- PHP > 7.0.0, see [requirements](https://phpunit.de/manual/current/en/installation.html#installation.requirements)
-- Sodium Ext
+- PHP > 7.2.0
+- [domExtension]Dom extension
 
 
 -------

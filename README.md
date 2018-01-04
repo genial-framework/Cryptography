@@ -11,6 +11,7 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 cd path/to/this-project
 composer require genial-framework/cryptography
 ```
+> Composer is not required but it is recommended.
 
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues

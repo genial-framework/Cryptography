@@ -22,3 +22,6 @@ composer run test
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Repository activity is at https://github.com/Genial-Framework/Cryptography/graphs/traffic
 - Repository code frequency is at https://github.com/Genial-Framework/Cryptography/graphs/code-frequency
+
+### License
+[MIT](LICENSE.txt) License

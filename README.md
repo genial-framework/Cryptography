@@ -12,10 +12,7 @@ cd path/to/this-project
 composer require genial-framework/cryptography
 ```
 
-\## To Do
-
--------
-- Implement the new Argon2 hashing algorithm
+## To Do
 - Implement custom algorithms by Genial (Vero1, and Lovell1)
 
 ### Links

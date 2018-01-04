@@ -12,12 +12,7 @@ cd path/to/this-project
 composer require genial-framework/cryptography
 ```
 
-## To Do
-- Implement custom algorithms by Genial (Vero1, and Lovell1)
-
-### Links
-
--------
+## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
-- Documentation is at https://github.com/Genial-Framework/Cryptography/tree/master/docs
-- Changelog is at https://github.com/Genial-Framework/Cryptography/blob/master/change.log
+- Repository activity is at https://github.com/Genial-Framework/Cryptography/graphs/traffic
+- Repository code frequency is at https://github.com/Genial-Framework/Cryptography/graphs/code-frequency

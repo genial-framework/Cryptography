@@ -5,17 +5,14 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 -------
 ## Prerequisites
 - PHP > 7.2.0
-- [domExtension]Dom extension
 
-
--------
-```
+## Installation
+```sh
+cd path/to/this-project
 composer require genial-framework/cryptography
 ```
 
-We suggest you use composer as it is quicker and easier. You can direct download the package, but if you do that then you need to create an autoloader to load all the files.
-
-### To Do
+\## To Do
 
 -------
 - Implement the new Argon2 hashing algorithm

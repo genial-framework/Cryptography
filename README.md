@@ -8,16 +8,10 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 
 ## Installation
 
-### via Composer
-
 ```sh
 cd path/to/this-project
 composer require genial-framework/cryptography
 ```
-
-### via Direct Download
-
-
 
 ## Testing
 ```sh

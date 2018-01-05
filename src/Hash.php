@@ -32,7 +32,7 @@ class Hash
      * @param string $data          Message to be hashed.
      * @param bool|false $rawOutput When set to TRUE, outputs raw binary data. FALSE outputs lowercase hexits.
      *
-     * @throws UnexpectedValueException If the algorithm is supported.
+     * @throws UnexpectedValueException If the algorithm is not supported.
      *
      * @return string Returns a string containing the calculated message digest as lowercase hexits unless raw_output is set to true in
      *                which case the raw binary representation of the message digest is returned.

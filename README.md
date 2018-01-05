@@ -14,6 +14,12 @@ composer require genial-framework/cryptography
 ```
 
 ## Testing
+> Testing Prerequisites
+>> - [DOM](http://php.net/manual/en/dom.setup.php) Extension
+>> - [JSON](http://php.net/manual/en/json.installation.php) Extension
+>> - [PCRE](http://php.net/manual/en/pcre.installation.php) Extension
+>> - [REFLECTION](http://php.net/manual/en/reflection.installation.php) Extension
+>> - [SPL](http://php.net/manual/en/spl.installation.php) Extension
 ```sh
 composer run test
 ```

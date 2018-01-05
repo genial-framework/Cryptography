@@ -60,27 +60,13 @@ class Hash
      *
      * Get the hexits or raw output binary size of the given hash.
      *
-     * @param string $algo Name of selected hashing algorithm (e.g. "md5", "sha256", "haval160,4", etc..).
      * @param string $data The hash to test.
-     *
-     * @throws UnexpectedValueException If the algorithm is supported.
      *
      * @return bool Returns TRUE if the algorithm is supported otherwise return FALSE.
      */
-    public static function getOutputSize(string $algo, string $hash)
+    public static function getOutputSize(string $hash)
     {
-        if (self::supportedAlgo($algo))
-        {
-            self::$lastAlgorithmSupported = $algorithm;
-            return mb_strlen($hash, '8bit');
-        } else
-        {
-            throw new UnexpectedValueException(sprintf(
-                '`%s` `%s` is not supported.',
-                __METHOD__,
-                htmlspecialchars($algo, ENT_QUOTES)
-            ));
-        }
+        return mb_strlen($hash, '8bit');
     }
     
     /**

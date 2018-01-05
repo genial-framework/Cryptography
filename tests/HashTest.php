@@ -43,6 +43,10 @@ final class HashTest extends TestCase
         $this->expectException(Exception\UnexpectedValueException::class);
         Hash::clearCachedAlgo();
         $showsError = Hash::cipher('foo-774', 'Hello world!');
+    }
+ 
+    public function testCipher2()
+    {
         $goodHash1 = Hash::cipher('sha256', 'Hello world!');
         $goodHash2 = Hash::cipher('sha256', 'Hello life!');
         $this->assertEquals($goodHash1, 'c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a');

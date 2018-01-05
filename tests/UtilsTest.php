@@ -38,7 +38,7 @@ final class UtilsTest extends TestCase
     
     public function testHashHmacAlgos()
     {
-        $this->assertEquals(hash_hmac_algos(), Utils::hashAlgos());
+        $this->assertEquals(hash_hmac_algos(), Utils::hashHmacAlgos());
     }
   
 }

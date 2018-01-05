@@ -19,8 +19,8 @@ final class AbstractRandTest extends TestCase
     {
         $int = Utils::randomInt();
         $this->assertTrue(is_int($int));
-        $this->assertTrue(strlen(10, 99) === 2);
-        $this->assertTrue(!(strlen(10, 99) === 3));
+        $this->assertTrue(strlen($int) === 2);
+        $this->assertTrue(!(strlen($int) === 3));
     }
     
     public function testRandomBytes()

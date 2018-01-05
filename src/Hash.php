@@ -7,8 +7,6 @@
  
 namespace Genial\Cryptography;
 
-use Exception\UnexpectedValueException;
-
 /**
  * Hash.
  */
@@ -47,7 +45,7 @@ class Hash
             return hash($hashAlgo, $data, boolval($rawOutput));
         } else
         {
-            throw new UnexpectedValueException(sprintf(
+            throw new Exception\UnexpectedValueException(sprintf(
                 '`%s` `%s` is not supported.',
                 __METHOD__,
                 htmlspecialchars($hashAlgo, ENT_QUOTES)

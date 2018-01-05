@@ -8,8 +8,6 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 
 ## Installation
 
-> Composer is not required but it is recommended.
-
 ### via Composer
 
 ```sh

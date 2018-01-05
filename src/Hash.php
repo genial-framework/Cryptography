@@ -86,7 +86,7 @@ class Hash
         }
         if (in_array($algo, Utils::hashAlgos(), true))
         {
-            self::$cachedAlgo = $algorithm;
+            self::$cachedAlgo = $algo;
             return true;
         }
         return false;

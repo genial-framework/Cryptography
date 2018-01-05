@@ -18,7 +18,7 @@ composer require genial-framework/cryptography
 ```sh
 composer run test
 ```
-> The co
+> When running the tests depending on how many components you have it will test them all.
 
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues

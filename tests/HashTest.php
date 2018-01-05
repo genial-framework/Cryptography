@@ -7,7 +7,7 @@
  
 namespace Genial\Cryptography;
 
-use Genial\Cryptography\Exception\UnexpectedValueException;
+use Exception\UnexpectedValueException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,56 +15,50 @@ use PHPUnit\Framework\TestCase;
  */
 final class HashTest extends TestCase
 {
-    public function testIsSupportedAlgo()
+ 
+    public function testSupportedAlgo()
     {
-        $algorithm = 'sha512';
-        $this->assertEquals(Hash::isSupportedAlgo($algorithm), true);
+        $goodAlgorithm = 'sha512';
+        $badAlgorithm = 'foo-774';
+        $this->assertTrue(Hash::supportedAlgo($goodAlgorithm));
+        $this->assertTrue(Hash::supportedAlgo($goodAlgorithm));
+        $this->assertTrue(!Hash::supportedAlgo($badAlgorithm));
     }
  
-    public function testIsSupportedAlgo1()
+    public function testClearCachedAlgo()
     {
-        $algorithm = 'foo-bar';
-        $this->assertEquals(Hash::isSupportedAlgo($algorithm), false);
+        Hash::clearCachedAlgo();
+        $this->assertEquals(Hash::getCacheAlgo(), null);
     }
  
-    public function testIsSupportedAlgo2()
+    public function testGetCacheAlgo()
     {
-        $algorithm = 'sha512';
-        $this->assertEquals(Hash::isSupportedAlgo($algorithm), true);
-    }
-    
-    public function testGetLastSupportedAlgorithm()
-    {
-        $this->assertEquals(Hash::getLastSupportedAlgorithm(), 'sha512');
-    }
-    
-    public function testClearLastAlgorithmCache()
-    {
-        Hash::clearLastAlgorithmCache();
-        $this->assertEquals(Hash::getLastSupportedAlgorithm(), null);
+        $goodAlgorithm = 'sha512';
+        $this->assertTrue(Hash::supportedAlgo($goodAlgorithm));
+        $this->assertTrue(Hash::supportedAlgo($goodAlgorithm));
+        $this->assertEquals(Hash::getCacheAlgo(), 'sha512');
     }
     
     public function testCipher()
     {
         $this->expectException(UnexpectedValueException::class);
-        Hash::cipher('foo-bar', 'foo-bar');
+        Hash::clearCachedAlgo();
+        $showsError = Hash::cipher('foo-774', 'Hello world!');
+        $goodHash1 = Hash::cipher('sha256', 'Hello world!');
+        $goodHash2 = Hash::cipher('sha256', 'Hello life!');
+        $this->assertEquals($goodHash1, 'c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a');
+        $this->assertEquals($goodHash2, '1f14a51182aaddc4b3c2a24909e93c1b1174d8dcdf8eec7c7bfe6486aab20977');
+        $this->assertTrue(mb_strlen($goodHash1, '8bit') === mb_strlen($goodHash2, '8bit'));
+        $this->assertTrue(!(mb_strlen($goodHash1, '8bit') !== mb_strlen($goodHash2, '8bit')));
     }
     
-    public function testCipher1()
-    {
-        $this->assertEquals(Hash::cipher('sha512', 'foo-bar'), '2f029b0cfec557c0172a1eba3d628c7d6e3ff37d43a3014e942251abb785541e8d83a4bd7e6b415f93c0823343a675283c6443b470e2bdba09e04717c81acfe3');   
-    }
- 
     public function testGetOutputSize()
     {
-        $this->assertEquals(Hash::getOutputSize('sha512', 'foo-bar'), 128);
+        Hash::clearCachedAlgo();
+        $hashSize1 = Hash::getOutputSize('c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a');
+        $hashSize2 = Hash::getOutputSize('1f14a51182aaddc4b3c2a24909e93c1b1174d8dcdf8eec7c7bfe6486aab20977');
+        $this->assertEquals($hashSize1, $hashSize2);
     }
- 
-    public function testGetOutputSize1()
-    {
-        $this->expectException(UnexpectedValueException::class);
-        $size = Hash::getOutputSize('foo-bar', 'foo-bar');
-    }
-  
+    
 }
 

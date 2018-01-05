@@ -1,78 +1,133 @@
 <?php
-/*
- * @link      <https://github.com/Genial-Framework/Cryptography> for the canonical source repository
- * @copyright Copyright (c) 2017-2017 Genial Framework. <https://github.com/Genial-Framework>
- * @license   <https://github.com/Genial-Framework/Cryptography/blob/master/LICENSE> New BSD License
+/**
+ * @link      <https://github.com/Genial-Framework/Cryptography> for the canonical source repository.
+ * @copyright Copyright (c) 2017-2019 Genial Framework. <https://github.com/Genial-Components>
+ * @license   <https://github.com/Genial-Framework/Cryptography/blob/master/LICENSE> New BSD License.
  */
  
 namespace Genial\Cryptography;
 
-use Genial\Cryptography\Exception\UnexpectedValueException;
-use Genial\Cryptography\Option\AlgoList;
+use Exception\UnexpectedValueException;
 
 /**
  * Hash.
  */
 class Hash
 {
+ 
+    /**
+     * @const bool|false RAW_OUTPUT.
+     */
     const RAW_OUTPUT = false;
     
-    protected static $lastAlgorithmSupported = null;
-    
-    public static function cipher(string $hashAlgorithm, string $data, $rawOutput = self::RAW_OUTPUT)
+    /**
+     * @var string|null $cachedAlgo The last supported algorithm used.
+     */
+    protected static $cachedAlgo = null;
+ 
+    /**
+     * cipher().
+     *
+     * Generate a hash value (message digest).
+     *
+     * @param string $hashAlgo      Name of selected hashing algorithm (e.g. "md5", "sha256", "haval160,4", etc..).
+     * @param string $data          Message to be hashed.
+     * @param bool|false $rawOutput When set to TRUE, outputs raw binary data. FALSE outputs lowercase hexits.
+     *
+     * @throws UnexpectedValueException If the algorithm is supported.
+     *
+     * @return string Returns a string containing the calculated message digest as lowercase hexits unless raw_output is set to true in
+     *                which case the raw binary representation of the message digest is returned.
+     */
+    public static function cipher(string $hashAlgo, string $data, $rawOutput = self::RAW_OUTPUT)
     {
-        if (self::isSupportedAlgo($hashAlgorithm))
+        if (self::supportedAlgo($hashAlgo))
         {
-            self::$lastAlgorithmSupported = $hashAlgorithm;
-            return hash($hashAlgorithm, $data, $rawOutput);
-        }
-        else
+            self::$cachedAlgo = $hashAlgo;
+            return hash($hashAlgo, $data, boolval($rawOutput));
+        } else
         {
             throw new UnexpectedValueException(sprintf(
-                '"%s" - "$hashAlgorithm" is not supported.',
-                __METHOD__
+                '`%s` `%s` is not supported.',
+                __METHOD__,
+                htmlspecialchars($hashAlgo, ENT_QUOTES)
             ));
         }
     }
     
-    public static function getOutputSize(string $algorithm, string $hash, $rawOutput = self::RAW_OUTPUT)
+    /**
+     * getOutputSize().
+     *
+     * Get the hexits or raw output binary size of the given hash.
+     *
+     * @param string $algo Name of selected hashing algorithm (e.g. "md5", "sha256", "haval160,4", etc..).
+     * @param string $data The hash to test.
+     *
+     * @throws UnexpectedValueException If the algorithm is supported.
+     *
+     * @return bool Returns TRUE if the algorithm is supported otherwise return FALSE.
+     */
+    public static function getOutputSize(string $algo, string $hash)
     {
-        if (self::isSupportedAlgo($algorithm))
+        if (self::supportedAlgo($algo))
         {
             self::$lastAlgorithmSupported = $algorithm;
-            return mb_strlen(self::cipher($algorithm, $hash, $rawOutput), '8bit');
-        }
-        else
+            return mb_strlen($hash, '8bit');
+        } else
         {
             throw new UnexpectedValueException(sprintf(
-                '"%s" - "$algorithm" is not supported.',
-                __METHOD__
+                '`%s` `%s` is not supported.',
+                __METHOD__,
+                htmlspecialchars($algo, ENT_QUOTES)
             ));
         }
     }
     
-    public static function isSupportedAlgo(string $algorithm)
+    /**
+     * supportedAlgo().
+     *
+     * Check to see if the given algorithm is supported.
+     *
+     * @param string $algo Name of selected hashing algorithm (e.g. "md5", "sha256", "haval160,4", etc..).
+     *
+     * @return bool Returns TRUE if the algorithm is supported otherwise return FALSE.
+     */
+    public static function supportedAlgo(string $algo)
     {
-        if ($algorithm === self::$lastAlgorithmSupported)
+        if ($algo === self::$cachedAlgo)
         {
             return true;
         }
-        if (in_array($algorithm, AlgoList::HashAlgos(), true))
+        if (in_array($algo, Utils::hashAlgos(), true))
         {
-            self::$lastAlgorithmSupported = $algorithm;
+            self::$cachedAlgo = $algorithm;
             return true;
         }
         return false;
     }
     
-    public static function clearLastAlgorithmCache()
+    /**
+     * clearCachedAlgo().
+     *
+     * Clear the supported algorithm cache.
+     *
+     * @return void.
+     */
+    public static function clearCachedAlgo()
     {
-        self::$lastAlgorithmSupported = null;
+        self::$cachedAlgo = null;
     }
  
-    public static function getLastSupportedAlgorithm()
+    /**
+     * getCacheAlgo().
+     *
+     * Get the supported algorithm based on cache.
+     *
+     * @return string Returns the last algorithm used that is supported.
+     */
+    public static function getCacheAlgo()
     {
-        return self::$lastAlgorithmSupported;
+        return self::$cachedAlgo;
     }
     
 }

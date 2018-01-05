@@ -14,16 +14,11 @@ composer require genial-framework/cryptography
 ```
 
 ## Testing
-> Testing Prerequisites
->> - [DOM](http://php.net/manual/en/dom.setup.php) Extension
->> - [JSON](http://php.net/manual/en/json.installation.php) Extension
->> - [PCRE](http://php.net/manual/en/pcre.installation.php) Extension
->> - [REFLECTION](http://php.net/manual/en/reflection.installation.php) Extension
->> - [SPL](http://php.net/manual/en/spl.installation.php) Extension
 ```sh
+cd path/to/this-project
 composer run test
 ```
-If you feel one of the components are not preforming correctly you can run `composer run test` and it will test all of the components and it will tell you what works and what does not work.
+> This should always work whenever you install this component.
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Repository activity is at https://github.com/Genial-Framework/Cryptography/graphs/traffic

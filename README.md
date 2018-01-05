@@ -7,18 +7,20 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 - PHP > 7.2.0
 
 ## Installation
+> Composer is not required but it is recommended.
+### Composer
 ```sh
 cd path/to/this-project
 composer require genial-framework/cryptography
 ```
-> Composer is not required but it is recommended.
->> ddd
+### Direct Download
+
+
 
 ## Testing
 ```sh
 composer run test
 ```
-> When running the tests depending on how many components you have it will test them all.
 
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues

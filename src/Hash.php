@@ -28,7 +28,7 @@ class Hash
      *
      * Generate a hash value (message digest).
      *
-     * @param string $hashAlgo      Name of selected hashing algorithm (e.g. "md5", "sha256", "haval160,4", etc..).
+     * @param string $hashAlgo      Name of selected hashing algorithm (i.e. "md5", "sha256", "haval160,4", etc..).
      * @param string $data          Message to be hashed.
      * @param bool|false $rawOutput When set to TRUE, outputs raw binary data. FALSE outputs lowercase hexits.
      *

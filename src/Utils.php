@@ -1,6 +1,7 @@
 <?php
 /**
- * @project   Genial Framework.
+ * Genial Framework.
+ *
  * @link      <https://github.com/Genial-Framework/Cryptography> for the canonical source repository.
  * @copyright Copyright (c) 2017-2019 Genial Framework. <https://github.com/Genial-Framework>
  * @license   <https://github.com/Genial-Framework/Cryptography/blob/master/LICENSE> New BSD License.

@@ -12,16 +12,15 @@ cd path/to/this-project
 composer require genial-framework/cryptography
 ```
 > Composer is not required but it is recommended.
+>> ddd
 
 ## Testing
 ```sh
 composer run test
 ```
+> The co
 
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Repository activity is at https://github.com/Genial-Framework/Cryptography/graphs/traffic
 - Repository code frequency is at https://github.com/Genial-Framework/Cryptography/graphs/code-frequency
-
-### License
-[MIT](LICENSE.txt) License

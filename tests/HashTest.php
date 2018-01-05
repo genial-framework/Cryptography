@@ -7,7 +7,6 @@
  
 namespace Genial\Cryptography;
 
-use Exception\UnexpectedValueException;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -41,7 +40,7 @@ final class HashTest extends TestCase
     
     public function testCipher()
     {
-        $this->expectException(UnexpectedValueException::class);
+        $this->expectException(Exception\UnexpectedValueException::class);
         Hash::clearCachedAlgo();
         $showsError = Hash::cipher('foo-774', 'Hello world!');
         $goodHash1 = Hash::cipher('sha256', 'Hello world!');

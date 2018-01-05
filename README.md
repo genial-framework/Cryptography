@@ -17,7 +17,7 @@ composer require genial-framework/cryptography
 ```sh
 composer run test
 ```
-
+If you feel one of the components are not preforming correctly you can run `composer run test` and it will test all of the components and it will tell you what works and what does not work.
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Repository activity is at https://github.com/Genial-Framework/Cryptography/graphs/traffic

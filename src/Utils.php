@@ -15,7 +15,7 @@ namespace Genial\Cryptography;
 /**
  * Utils.
  */
-class Utils
+class Utils extends AbstractRand
 {
     
     /**

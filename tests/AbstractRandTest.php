@@ -17,7 +17,7 @@ final class AbstractRandTest extends TestCase
   
     public function testRandomInt()
     {
-        $int = Utils::randomInt();
+        $int = Utils::randomInt(10, 99);
         $this->assertTrue(is_int($int));
         $this->assertTrue(strlen($int) === 2);
         $this->assertTrue(!(strlen($int) === 3));

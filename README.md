@@ -22,8 +22,8 @@ composer require genial-framework/cryptography
 ```
 
 ## Resources/Tools
-- https://travis-ci.org/ 
-- https://coveralls.io/
+- Travis-CI: https://travis-ci.org/ 
+- Coveralls: https://coveralls.io/
 
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues

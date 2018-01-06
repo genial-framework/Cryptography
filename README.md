@@ -11,6 +11,8 @@ You can use the installer by going to their [website](https://getcomposer.org/) 
 ```sh
 composer require genial-framework/cryptography
 ```
+## Contributing
+
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Repository insights is at https://github.com/Genial-Framework/Cryptography/pulse

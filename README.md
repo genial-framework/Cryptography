@@ -2,7 +2,6 @@
 
 ---------------------
 ## Installation
-
 > Composer should be used as your main dependency manager.
 
 Composer makes it easier to keep vendor libraries out of your repo, meaning that only application code goes in the git repository. It literally does all the work for you so maintaining the latest versions of all required libraries is easier because you can simply run `composer update` to get the latest compatible packages.
@@ -12,7 +11,6 @@ You can use the installer by going to their [website](https://getcomposer.org/) 
 ```sh
 composer require genial-framework/cryptography
 ```
-
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Repository activity is at https://github.com/Genial-Framework/Cryptography/graphs/traffic

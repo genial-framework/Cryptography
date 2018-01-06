@@ -12,6 +12,7 @@ You can use the installer by going to their [website](https://getcomposer.org/) 
 composer require genial-framework/cryptography
 ```
 ## Contributing
+> The contributing has not been created yet.
 
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues

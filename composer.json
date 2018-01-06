@@ -6,6 +6,7 @@
     "license": "BSD-3-Clause",
     "require": {
         "php": "^7.0",
+        "paragonie/halite": "4.*",
         "ext-mbstring": "*",
         "ext-openssl": "*"
     },
@@ -16,9 +17,6 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5"
-    },
-    "suggest": {
-        "ext-sodium": "*"   
     },
     "scripts": {
         "test": "./vendor/bin/phpunit"

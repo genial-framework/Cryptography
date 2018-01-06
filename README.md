@@ -13,10 +13,6 @@ You can use the installer by going to their [website](https://getcomposer.org/) 
 composer require genial-framework/cryptography
 ```
 
-## Resources/Tools
-- Travis-CI https://travis-ci.org/ 
-- Coveralls https://coveralls.io/
-
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues
 - Repository activity is at https://github.com/Genial-Framework/Cryptography/graphs/traffic

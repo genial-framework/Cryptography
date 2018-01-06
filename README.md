@@ -9,9 +9,10 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 ## Installation
 
 ```sh
-cd path/to/this-project
 composer require genial-framework/cryptography
 ```
+> Composer should be used as your main dependency manager.
+> To install composer [click here]https://getcomposer.org/
 
 ## Testing
 ```sh

@@ -8,11 +8,16 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 
 ## Installation
 
+### Installing Composer
+> Composer should be used as your main dependency manager. <br />
+> https://getcomposer.org/
+
+### Why Composer
+Composer makes it easier to keep vendor libraries out of your repo, meaning that only application code goes in the git repository. It also makes maintaining the latest versions of all required libraries easier because you can simply run ```sh composer update``` to get the latest compatible packages.
+
 ```sh
 composer require genial-framework/cryptography
 ```
-> Composer should be used as your main dependency manager. <br />
-> https://getcomposer.org/
 
 ## Testing
 ```sh

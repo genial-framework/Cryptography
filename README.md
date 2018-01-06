@@ -15,11 +15,15 @@ You can use the installer by going to their website and clicking download and it
 > https://getcomposer.org/
 
 ### Why Composer
-Composer makes it easier to keep vendor libraries out of your repo, meaning that only application code goes in the git repository. It also makes maintaining the latest versions of all required libraries easier because you can simply run ```sh composer update``` to get the latest compatible packages.
+Composer makes it easier to keep vendor libraries out of your repo, meaning that only application code goes in the git repository. It also makes maintaining the latest versions of all required libraries easier because you can simply run ```composer update``` to get the latest compatible packages.
 
 ```sh
 composer require genial-framework/cryptography
 ```
+
+## Resources/Tools
+- https://travis-ci.org/ 
+- https://coveralls.io/
 
 ## Links
 - File issues at https://github.com/Genial-Framework/Cryptography/issues

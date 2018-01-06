@@ -12,7 +12,14 @@ use Genial\Cryptogrphy\{
     Hash
 };
 
-class Lovell implements LovellInterface
+class Lovell
 {
-  
+
+    const LOVELL_COST = 12;
+    
+    public function rotateKeys(string $plainttextPassword, string $storedHashPasswords)
+    {
+        
+    }
+    
 }

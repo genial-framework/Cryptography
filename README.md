@@ -11,8 +11,8 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 ```sh
 composer require genial-framework/cryptography
 ```
-> Composer should be used as your main dependency manager.
-> To install composer [click here]https://getcomposer.org/
+> Composer should be used as your main dependency manager. <br />
+> https://getcomposer.org/
 
 ## Testing
 ```sh

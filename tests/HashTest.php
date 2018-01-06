@@ -56,8 +56,8 @@ final class HashTest extends TestCase
         $rawHash1 = Hash::cipher('sha256', 'Hello world!', true);
         $rawHash2 = Hash::cipher('sha256', 'Hello life!', true);
         $rawHash3 = Hash::cipher('sha256', 'Hello life!', true);
-        $this->assertEquals(mb_strlen($rawHash1, '8bit') === mb_strlen($rawHash2, '8bit'));
-        $this->assertEquals($rawHash2 === $rawHash3);
+        $this->assertEquals(mb_strlen($rawHash1, '8bit'), mb_strlen($rawHash2, '8bit'));
+        $this->assertEquals($rawHash2, $rawHash3);
         $this->assertTrue($rawHash2 !== $goodHash2);
     }
     

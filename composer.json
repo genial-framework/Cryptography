@@ -1,9 +1,30 @@
 {
     "name": "genial-framework/cryptography",
     "type": "library",
-    "description": "A cryptographic dependent used to encrypt sensitive data and one-way hash passwords.",
+    "keywords": [
+        "cryptography-tools",
+        "hashing-passwords",
+        "encryption",
+        "php7",
+        "php-component",
+        "cryptography-component"
+    ],
+    "description": "Cryptography component to encrypt sensitive information and one-way hash passwords.",
     "homepage": "https://github.com/Genial-Framework/Cryptography",
     "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Nicholas English",
+            "email": "nenglish0820@outlook.com",
+            "homepage": "https://github.com/Nenglish7",
+            "role": "Developer"
+        },
+        {
+            "name": "Genial Contributors",
+            "homepage": "https://github.com/orgs/Genial-Framework/people",
+            "role": "Contribute"
+        }
+    ],
     "require": {
         "php": "^7.0",
         "paragonie/halite": "4.*",

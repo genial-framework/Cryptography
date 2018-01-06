@@ -60,7 +60,7 @@ class Hash
      *
      * @param string $data The hash to test.
      *
-     * @return bool Returns TRUE if the algorithm is supported otherwise return FALSE.
+     * @return bool Returns the output size of the hash.
      */
     public static function getOutputSize(string $hash)
     {

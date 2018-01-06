@@ -1,6 +1,8 @@
 [![Coveralls github branch](https://img.shields.io/coveralls/github/Genial-Framework/Cryptography/master.svg?style=flat-square)](https://coveralls.io/github/Genial-Framework/Cryptography?branch=master) [![Travis](https://img.shields.io/travis/Genial-Framework/Cryptography.svg?style=flat-square)](https://travis-ci.org/Genial-Framework/Cryptography) 
 
 ---------------------
+This cyptography component uses a modern cryptography library known as `Sodium` that offers authenticated encryption, high-speed elliptic curve cryptography, and much more. Unlike other cryptography standards (which are a potluck of cryptography primitives; i.e. WebCrypto), sodium is comprised of carefully selected algorithms implemented by security experts to avoid side-channel vulnerabilities. 
+
 ## Installation
 > Composer should be used as your main dependency manager.
 

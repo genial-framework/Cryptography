@@ -5,6 +5,7 @@ Cryptography component to encrypt sensitive information and one-way hash passwor
 -------
 ## Prerequisites
 - PHP > 7.2.0
+- [OpenSSL](http://php.net/manual/en/book.openssl.php) Extension
 
 ## Installation
 

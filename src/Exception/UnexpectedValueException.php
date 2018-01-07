@@ -1,8 +1,8 @@
 <?php
-/*
- * @link      <https://github.com/Genial-Framework/Cryptography> for the canonical source repository
- * @copyright Copyright (c) 2017-2017 Genial Framework. <https://github.com/Genial-Framework>
- * @license   <https://github.com/Genial-Framework/Cryptography/blob/master/LICENSE> New BSD License
+/**
+ * @link      <https://github.com/Genial-Framework/Cryptography> for the canonical source repository.
+ * @copyright Copyright (c) 2017-2019 Genial Framework. <https://github.com/Genial-Components>
+ * @license   <https://github.com/Genial-Framework/Cryptography/blob/master/LICENSE> New BSD License.
  */
  
 namespace Genial\Cryptography\Exception;
@@ -12,4 +12,5 @@ namespace Genial\Cryptography\Exception;
  */
 class UnexpectedValueException extends \UnexpectedValueException implements ExceptionInterface
 {
+ 
 }

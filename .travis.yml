@@ -1,7 +1,5 @@
 language: php
 php:
-    - '7.0.26'
-    - '7.1.12'
     - '7.2.0'
 os:
     - windows

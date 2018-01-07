@@ -65,7 +65,7 @@ class HashHmac
      */
     public static function getOutputSize(string $hash): int
     {
-        return (int) \Hash::getOutputSize($hash);
+        return (int) Hash::getOutputSize($hash);
     }
     
     /**

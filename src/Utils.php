@@ -25,7 +25,7 @@ class Utils extends AbstractRand
      */
     public static function hashEquals(string $knownString, string $userString): bool
     {
-        return (bool) \sodium_compare($knownString, $userString);
+        return (bool) \hash_equals($knownString, $userString);
     }
     
     /**

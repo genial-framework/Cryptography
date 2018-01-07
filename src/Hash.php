@@ -85,9 +85,9 @@ class Hash
         if (\in_array($algo, Utils::hashAlgos(), \true))
         {
             self::$cachedAlgo = $algo;
-            return \true;
+            return (bool) \true;
         }
-        return \false;
+        return (bool) \false;
     }
     
     /**

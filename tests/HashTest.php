@@ -51,12 +51,12 @@ final class HashTest extends TestCase
         $goodHash2 = Hash::cipher('sha256', 'Hello life!');
         $this->assertEquals($goodHash1, 'c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a');
         $this->assertEquals($goodHash2, '1f14a51182aaddc4b3c2a24909e93c1b1174d8dcdf8eec7c7bfe6486aab20977');
-        $this->assertTrue(mb_strlen($goodHash1, '8bit') === mb_strlen($goodHash2, '8bit'));
-        $this->assertTrue(!(mb_strlen($goodHash1, '8bit') !== mb_strlen($goodHash2, '8bit')));
-        $rawHash1 = Hash::cipher('sha256', 'Hello world!', true);
-        $rawHash2 = Hash::cipher('sha256', 'Hello life!', true);
-        $rawHash3 = Hash::cipher('sha256', 'Hello life!', true);
-        $this->assertEquals(mb_strlen($rawHash1, '8bit'), mb_strlen($rawHash2, '8bit'));
+        $this->assertTrue(\mb_strlen($goodHash1, '8bit') === \mb_strlen($goodHash2, '8bit'));
+        $this->assertTrue(!(\mb_strlen($goodHash1, '8bit') !== \mb_strlen($goodHash2, '8bit')));
+        $rawHash1 = Hash::cipher('sha256', 'Hello world!', \true);
+        $rawHash2 = Hash::cipher('sha256', 'Hello life!', \true);
+        $rawHash3 = Hash::cipher('sha256', 'Hello life!', \true);
+        $this->assertEquals(\mb_strlen($rawHash1, '8bit'), \mb_strlen($rawHash2, '8bit'));
         $this->assertEquals($rawHash2, $rawHash3);
         $this->assertTrue($rawHash2 !== $goodHash2);
     }

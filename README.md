@@ -3,6 +3,8 @@
 ---------------------
 Cryptography component by Genial Framework.
 
+> If you looking to be a dedicated contributor please send an email to nenglish0820@outlook.com.
+
 ## Installation
 
 > Composer should be used as your main dependency manager.

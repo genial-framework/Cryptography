@@ -3,7 +3,7 @@
 ---------------------
 Cryptography component by Genial Framework.
 
-> If you looking to be a dedicated contributor please
+> If you looking to be a dedicated contributor please <br />
 > send an email to nenglish0820@outlook.com.
 
 ## Installation

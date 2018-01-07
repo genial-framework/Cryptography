@@ -14,6 +14,24 @@ abstract class AbstractRand
 {
  
     /**
+     * randomUuid().
+     *
+     * Generates cryptographically secure pseudo-random unique user id.
+     *
+     * @return int Returns a cryptographically secure random unique user id.
+     */
+    public static function randomUuid()
+    {
+        return \implode('-', [
+            \bin2hex(self::randomBytes(4)),
+            \bin2hex(self::randomBytes(2)),
+            \bin2hex(\chr((\ord(self::randomBytes(1)) & 0x0F) | 0x40)) . \bin2hex(self::randomBytes(1)),
+            \bin2hex(\chr((\ord(self::randomBytes(1)) & 0x3F) | 0x80)) . \bin2hex(self::randomBytes(1)),
+            \bin2hex(self::randomBytes(6))
+        ]);
+    }
+ 
+    /**
      * randomInt().
      *
      * Generates cryptographically secure pseudo-random integers.

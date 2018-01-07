@@ -49,7 +49,11 @@ class Utils extends AbstractRand
      */
     public static function hashHmacAlgos(): array
     {
-        return (array) \hash_hmac_algos();
+        if (\function_exists('hash_hmac_algos'))
+        {
+            return (array) \hash_hmac_algos();
+        }
+        return self::hashAlgos();
     }
     
 }

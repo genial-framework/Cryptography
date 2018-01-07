@@ -16,12 +16,12 @@ class HashHmac
     /**
      * @const bool|false RAW_OUTPUT.
      */
-    const RAW_OUTPUT = false;
+    const RAW_OUTPUT = \false;
     
     /**
      * @var string|null $cachedAlgo The last supported algorithm used.
      */
-    protected static $cachedAlgo = null;
+    protected static $cachedAlgo = \null;
     
     /**
      * cipher().
@@ -38,18 +38,18 @@ class HashHmac
      * @return string Returns a string containing the calculated message digest as lowercase hexits unless raw_output is set to true in
      *                which case the raw binary representation of the message digest is returned.
      */
-    public static function cipher(string $hashAlgo, string $data, string $sharedKey, $rawOutput = self::RAW_OUTPUT)
+    public static function cipher(string $hashAlgo, string $data, string $sharedKey, $rawOutput = self::RAW_OUTPUT): string
     {
         if (self::supportedAlgo($hashAlgo))
         {
             self::$cachedAlgo = $hashAlgo;
-            return hash_hmac($hashAlgo, $data, $sharedKey, boolval($rawOutput));
+            return (string) \hash_hmac($hashAlgo, $data, $sharedKey, \boolval($rawOutput));
         } else
         {
             throw new Exception\UnexpectedValueException(sprintf(
                 '`%s` `%s` is not supported.',
                 __METHOD__,
-                htmlspecialchars($hashAlgo, ENT_QUOTES)
+                \htmlspecialchars($hashAlgo, \ENT_QUOTES)
             ));
         }
     }
@@ -63,9 +63,9 @@ class HashHmac
      *
      * @return bool Returns the output size of the hash.
      */
-    public static function getOutputSize(string $hash)
+    public static function getOutputSize(string $hash): int
     {
-        return Hash::getOutputSize($hash);
+        return (int) \Hash::getOutputSize($hash);
     }
     
     /**
@@ -77,18 +77,18 @@ class HashHmac
      *
      * @return bool Returns TRUE if the algorithm is supported otherwise return FALSE.
      */
-    public static function supportedAlgo(string $algo)
+    public static function supportedAlgo(string $algo): bool
     {
         if ($algo === self::$cachedAlgo)
         {
             return true;
         }
-        if (in_array($algo, Utils::hashHmacAlgos(), true))
+        if (\in_array($algo, Utils::hashHmacAlgos(), \true))
         {
             self::$cachedAlgo = $algo;
-            return true;
+            return (bool) \true;
         }
-        return false;
+        return (bool) \false;
     }
     
     /**
@@ -100,7 +100,7 @@ class HashHmac
      */
     public static function clearCachedAlgo()
     {
-        self::$cachedAlgo = null;
+        self::$cachedAlgo = \null;
     }
  
     /**

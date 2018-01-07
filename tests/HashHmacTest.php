@@ -50,13 +50,13 @@ final class HashHmacTest extends TestCase
         $goodHash1 = Hash::cipher('sha256', 'Hello world!', 'randomKey');
         $goodHash2 = Hash::cipher('sha256', 'Hello life!', 'randomKey');
         $goodHash3 = Hash::cipher('sha256', 'Hello life!', 'randomKey2');
-        $this->assertTrue(mb_strlen($goodHash1, '8bit') === mb_strlen($goodHash2, '8bit'));
-        $this->assertTrue(!(mb_strlen($goodHash1, '8bit') !== mb_strlen($goodHash2, '8bit')));
+        $this->assertTrue(\mb_strlen($goodHash1, '8bit') === \mb_strlen($goodHash2, '8bit'));
+        $this->assertTrue(!(\mb_strlen($goodHash1, '8bit') !== \mb_strlen($goodHash2, '8bit')));
         $this->assertTrue($goodHash1 !== $goodHash3);
-        $rawHash1 = HashHmac::cipher('sha256', 'Hello world!', 'randomKey', true);
-        $rawHash2 = HashHmac::cipher('sha256', 'Hello life!', 'randomKey', true);
-        $rawHash3 = HashHmac::cipher('sha256', 'Hello life!', 'randomKey', true);
-        $this->assertEquals(mb_strlen($rawHash1, '8bit'), mb_strlen($rawHash2, '8bit'));
+        $rawHash1 = HashHmac::cipher('sha256', 'Hello world!', 'randomKey', \true);
+        $rawHash2 = HashHmac::cipher('sha256', 'Hello life!', 'randomKey', \true);
+        $rawHash3 = HashHmac::cipher('sha256', 'Hello life!', 'randomKey', \true);
+        $this->assertEquals(\mb_strlen($rawHash1, '8bit'), \mb_strlen($rawHash2, '8bit'));
         $this->assertEquals($rawHash2, $rawHash3);
         $this->assertTrue($rawHash2 !== $goodHash2);
     }

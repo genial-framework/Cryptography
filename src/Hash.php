@@ -48,7 +48,7 @@ class Hash
             throw new Exception\UnexpectedValueException(sprintf(
                 '`%s` `%s` is not supported.',
                 __METHOD__,
-                \htmlspecialchars($hashAlgo, ENT_QUOTES)
+                \htmlspecialchars($hashAlgo, \ENT_QUOTES)
             ));
         }
     }

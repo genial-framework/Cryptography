@@ -14,21 +14,45 @@ abstract class AbstractRand
 {
  
     /**
-     * randomUuid().
+     * randomStrShuffle().
      *
-     * Generates cryptographically secure pseudo-random unique user id.
+     * Shuffles the characters inside a string using CSPRNG.
      *
-     * @return int Returns a cryptographically secure random unique user id.
+     * @param string $string The string that needs to be shuffled.
+     *
+     * @return array Returns the string shuffled.
      */
-    public static function randomUuid()
+    public static function randomStrShuffle(string $string): string
     {
-        return \implode('-', [
-            \bin2hex(self::randomBytes(4)),
-            \bin2hex(self::randomBytes(2)),
-            \bin2hex(\chr((\ord(self::randomBytes(1)) & 0x0F) | 0x40)) . \bin2hex(self::randomBytes(1)),
-            \bin2hex(\chr((\ord(self::randomBytes(1)) & 0x3F) | 0x80)) . \bin2hex(self::randomBytes(1)),
-            \bin2hex(self::randomBytes(6))
-        ]);
+        $array = \str_split($string);
+        $arrayValues = self::randomShuffle($array);
+        return \implode($arrayValues);
+    }
+ 
+    /**
+     * randomShuffle().
+     *
+     * Shuffles arrays using CSPRNG.
+     *
+     * @param array $array The array that needs to be shuffled.
+     *
+     * @return array Returns the array shuffled.
+     */
+    public static function randomShuffle(array $array): array
+    {
+        $size = \count($array);
+        $keys = \array_keys($array);
+        for ($i = $size - 1; $i > 0; --$i)
+        {
+            $r = self::randomInt(0, $i);
+            if ($r !== $i)
+            {
+                $temp = $array[$keys[$r]];
+                $array[$keys[$r]] = $array[$keys[$i]];
+                $array[$keys[$i]] = $temp;
+            }
+        }
+        return \array_values($array);
     }
  
     /**

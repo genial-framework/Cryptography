@@ -1,6 +1,8 @@
 language: php
 php:
-    - '7.2.0'
+    - '7.0.27'
+    - '7.1.13'
+    - '7.2.1'
 os:
     - linux
     - windows
@@ -9,8 +11,6 @@ git:
 matrix:
     fast_finish: true
 sudo: false
-before_install:
-    - composer require paragonie/sodium_compat
 install:
     - travis_retry composer install --no-interaction
     - wget -c -nc --retry-connrefused --tries=0 https://github.com/satooshi/php-coveralls/releases/download/v1.0.1/coveralls.phar

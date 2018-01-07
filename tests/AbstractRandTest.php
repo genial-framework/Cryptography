@@ -26,8 +26,12 @@ final class AbstractRandTest extends TestCase
             'u', 'v', 'w', 'x',
             'y', 'z'
         ]);
+        $str = Utils::randomStrShuffle('1234567890abcdefghijklmnopqrstuvwxyz');
         $this->assertTrue(\count($array) === 26);
         $this->assertTrue(\is_array($array));
+        $this->assertTrue(\is_string($str));
+        $this->assertTrue($str !== '1234567890abcdefghijklmnopqrstuvwxyz');
+        $this->assertTrue(\strlen($str) === 36);
     }
   
     public function testRandomInt()

@@ -23,9 +23,9 @@ class Utils extends AbstractRand
      *
      * @return bool Returns TRUE when the two strings are equal, FALSE otherwise.
      */
-    public static function hashEquals(string $knownString, string $userString)
+    public static function hashEquals(string $knownString, string $userString): bool
     {
-        return hash_equals($knownString, $userString);
+        return (bool) \hash_equals($knownString, $userString);
     }
     
     /**
@@ -35,9 +35,9 @@ class Utils extends AbstractRand
      *
      * @return array Returns a numerically indexed array containing the list of supported hashing algorithms.
      */
-    public static function hashAlgos()
+    public static function hashAlgos(): array
     {
-        return hash_algos();
+        return (array) \hash_algos();
     }
     
     /**
@@ -47,9 +47,9 @@ class Utils extends AbstractRand
      *
      * @return array Returns a numerically indexed array containing the list of supported hashing algorithms suitable for hash_hmac().
      */
-    public static function hashHmacAlgos()
+    public static function hashHmacAlgos(): array
     {
-        return hash_hmac_algos();
+        return (array) \hash_hmac_algos();
     }
     
 }

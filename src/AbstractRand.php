@@ -42,5 +42,4 @@ abstract class AbstractRand
         return (string) \random_bytes($length);
     }
   
-  
 }

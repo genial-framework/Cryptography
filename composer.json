@@ -27,7 +27,6 @@
     ],
     "require": {
         "php": "^7.0",
-        "paragonie/halite": "4.*",
         "ext-mbstring": "*",
         "ext-openssl": "*"
     },

@@ -18,17 +18,17 @@ final class AbstractRandTest extends TestCase
     public function testRandomInt()
     {
         $int = Utils::randomInt(10, 99);
-        $this->assertTrue(is_int($int));
-        $this->assertTrue(strlen($int) === 2);
-        $this->assertTrue(!(strlen($int) === 3));
+        $this->assertTrue(\is_int($int));
+        $this->assertTrue(\strlen($int) === 2);
+        $this->assertTrue(!(\strlen($int) === 3));
     }
     
     public function testRandomBytes()
     {
         $bytes = Utils::randomBytes(5);
-        $this->assertTrue(is_string($bytes));
-        $this->assertTrue(strlen($bytes) === 5);
-        $this->assertTrue(!(strlen($bytes) === 6));
+        $this->assertTrue(\is_string($bytes));
+        $this->assertTrue(\strlen($bytes) === 5);
+        $this->assertTrue(!(\strlen($bytes) === 6));
     }
   
 }

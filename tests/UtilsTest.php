@@ -33,12 +33,18 @@ final class UtilsTest extends TestCase
     
     public function testHashAlgos()
     {
-        $this->assertEquals(hash_algos(), Utils::hashAlgos());
+        $this->assertEquals(\hash_algos(), Utils::hashAlgos());
     }
     
     public function testHashHmacAlgos()
     {
-        $this->assertEquals(hash_hmac_algos(), Utils::hashHmacAlgos());
+        if (\function_exists('hash_hmac_algos'))
+        {
+            $this->assertEquals(\hash_hmac_algos(), Utils::hashHmacAlgos());
+        } else
+        {
+            $this->assertEquals(\hash_algos(), Utils::hashHmacAlgos());
+        }
     }
   
 }

@@ -4,8 +4,8 @@ php:
     - '7.1.13'
     - '7.2.1'
 os:
-    - linux
     - windows
+    - linux
 git:
     depth: 1
 matrix:

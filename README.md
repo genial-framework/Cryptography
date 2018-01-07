@@ -15,7 +15,7 @@ composer require genial-framework/cryptography
 
 ## Contributing
 
-> The contributing has not been created yet.
+> The contributing section has not been created yet.
 
 ## Links
 

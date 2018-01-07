@@ -9,7 +9,7 @@
         "php-component",
         "cryptography-component"
     ],
-    "description": "Cryptography component to encrypt sensitive information and one-way hash passwords.",
+    "description": "Cryptography component by Genial Framework. ",
     "homepage": "https://github.com/Genial-Framework/Cryptography",
     "license": "BSD-3-Clause",
     "authors": [

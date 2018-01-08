@@ -7,7 +7,7 @@
  
 namespace Genial\Cryptography;
 
-use Exception\
+use \Genial\Cryptography\Exception\
 {
     UnexpectedValueException
 };
@@ -52,7 +52,7 @@ class Hash
         {
             throw new UnexpectedValueException(\sprintf(
                 '`%s` The algorithm is not supported. Passed `%s`.',
-                \__METHOD__,
+                __METHOD__,
                 \htmlspecialchars($hashAlgo, \ENT_QUOTES, 'UTF-8')
             ));
         }

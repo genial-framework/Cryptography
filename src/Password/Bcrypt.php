@@ -67,7 +67,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
             throw new LengthException(\sprintf(
                 '`%s` The password to not be longer than 72 characters. Password length: `%s`.'
                 __METHOD__,
-                htmlspecialchars(\mb_strlen($plaintext), ENT_QUOTES, 'UTF-8')
+                \htmlspecialchars(\mb_strlen($plaintext), \ENT_QUOTES, 'UTF-8')
             ));
         }
         return (string) \password_hash($plaintext, \PASSWORD_BCRYPT,
@@ -92,7 +92,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
             throw new LengthException(\sprintf(
                 '`%s` The password to not be longer than 72 characters. Password length: `%s`.'
                 __METHOD__,
-                htmlspecialchars(\mb_strlen($plaintext), ENT_QUOTES, 'UTF-8')
+                \htmlspecialchars(\mb_strlen($plaintext), \ENT_QUOTES, 'UTF-8')
             ));
         }
         if (\password_verify($plaintext, $hash))

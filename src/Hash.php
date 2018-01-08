@@ -1,11 +1,16 @@
 <?php
 /**
- * @link      <https://github.com/Genial-Framework/Cryptography> for the canonical source repository.
- * @copyright Copyright (c) 2017-2019 Genial Framework. <https://github.com/Genial-Components>
- * @license   <https://github.com/Genial-Framework/Cryptography/blob/master/LICENSE> New BSD License.
+ * @link      <https://github.com/Genial-Components/Cryptography> for the canonical source repository.
+ * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
+ * @license   <https://github.com/Genial-Components/Cryptography/blob/master/LICENSE> New BSD License.
  */
  
 namespace Genial\Cryptography;
+
+use Exception\
+{
+    UnexpectedValueException
+};
 
 /**
  * Hash.
@@ -45,10 +50,10 @@ class Hash
             return (string) \hash($hashAlgo, $data, \boolval($rawOutput));
         } else
         {
-            throw new Exception\UnexpectedValueException(sprintf(
-                '`%s` `%s` is not supported.',
-                __METHOD__,
-                \htmlspecialchars($hashAlgo, \ENT_QUOTES)
+            throw new UnexpectedValueException(\sprintf(
+                '`%s` The algorithm is not supported. Passed `%s`.',
+                \__METHOD__,
+                \htmlspecialchars($hashAlgo, \ENT_QUOTES, 'UTF-8')
             ));
         }
     }

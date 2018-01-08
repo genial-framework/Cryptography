@@ -10,7 +10,10 @@ namespace Genial\Cryptography\Password;
 use \Genial\Cryptography\
 {
     Utils
-    Exception\RangeException
+    Exception\{
+        RangeException
+        LengthException
+    }
 };
 
 /**
@@ -59,6 +62,14 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
      */
     public function hash(string $plaintext): string
     {
+        if (\mb_strlen($plaintext) > 72)
+        {
+            throw new LengthException(\sprintf(
+                '`%s` The password to not be longer than 72 characters. Password length: `%s`.'
+                __METHOD__,
+                htmlspecialchars(\mb_strlen($plaintext), ENT_QUOTES, 'UTF-8')
+            ));
+        }
         return (string) \password_hash($plaintext, \PASSWORD_BCRYPT,
         [
             'cost' => $this->cost,
@@ -76,6 +87,14 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
      */
     public function verify(string $plaintext, string $hash): array
     {
+        if (\mb_strlen($plaintext) > 72)
+        {
+            throw new LengthException(\sprintf(
+                '`%s` The password to not be longer than 72 characters. Password length: `%s`.'
+                __METHOD__,
+                htmlspecialchars(\mb_strlen($plaintext), ENT_QUOTES, 'UTF-8')
+            ));
+        }
         if (\password_verify($plaintext, $hash))
         {
             $temp = $hash;

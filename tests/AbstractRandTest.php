@@ -15,25 +15,6 @@ use PHPUnit\Framework\TestCase;
 final class AbstractRandTest extends TestCase
 {
   
-    public function testRandomShuffle()
-    {
-        $array = Utils::randomShuffle([
-            'a', 'b', 'c', 'd',
-            'e', 'f', 'g', 'h',
-            'i', 'j', 'k', 'l',
-            'm', 'n', 'o', 'p',
-            'q', 'r', 's', 't',
-            'u', 'v', 'w', 'x',
-            'y', 'z'
-        ]);
-        $str = Utils::randomStrShuffle('1234567890abcdefghijklmnopqrstuvwxyz');
-        $this->assertTrue(\count($array) === 26);
-        $this->assertTrue(\is_array($array));
-        $this->assertTrue(\is_string($str));
-        $this->assertTrue($str !== '1234567890abcdefghijklmnopqrstuvwxyz');
-        $this->assertTrue(\strlen($str) === 36);
-    }
-  
     public function testRandomInt()
     {
         $int = Utils::randomInt(10, 99);

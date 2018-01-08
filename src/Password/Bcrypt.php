@@ -59,7 +59,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
      */
     public function hash(string $plaintext): string
     {
-        return \password_hash($plaintext, \PASSWORD_BCRYPT,
+        return (string) \password_hash($plaintext, \PASSWORD_BCRYPT,
         [
             'cost' => $this->cost,
         ]);
@@ -87,16 +87,16 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
             }
             if (!Utils::hashEquals($temp, $hash))
             {
-                return [
+                return (array) [
                     'password_verified' => \true,
                     'new_hash' => $hash
                 ];
             }
-            return [
+            return (array) [
                 'password_verified' => \true
             ];
         }
-        return [
+        return (array) [
             'password_verified' => \false
         ];
     }
@@ -111,7 +111,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
      */
     public function getHashInfo(string $hash): array
     {
-        return \password_get_info($hash)
+        return (array) \password_get_info($hash)
     }
     
 }

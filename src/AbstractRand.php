@@ -25,7 +25,7 @@ abstract class AbstractRand
      */
     public static function randomInt(int $min, int $max): int
     {
-        return (\int) \random_int($min, $max); 
+        return (int) \random_int($min, $max); 
     }
   
     /**
@@ -39,7 +39,7 @@ abstract class AbstractRand
      */
     public static function randomBytes(int $length): string
     {
-        return (\string) \random_bytes($length);
+        return (string) \random_bytes($length);
     }
   
 }

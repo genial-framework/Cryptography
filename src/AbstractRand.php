@@ -1,8 +1,8 @@
 <?php
 /**
- * @link      <https://github.com/Genial-Framework/Cryptography> for the canonical source repository.
- * @copyright Copyright (c) 2017-2019 Genial Framework. <https://github.com/Genial-Components>
- * @license   <https://github.com/Genial-Framework/Cryptography/blob/master/LICENSE> New BSD License.
+ * @link      <https://github.com/Genial-Components/Cryptography> for the canonical source repository.
+ * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
+ * @license   <https://github.com/Genial-Components/Cryptography/blob/master/LICENSE> New BSD License.
  */
 
 namespace Genial\Cryptography;
@@ -12,48 +12,6 @@ namespace Genial\Cryptography;
  */
 abstract class AbstractRand
 {
- 
-    /**
-     * randomStrShuffle().
-     *
-     * Shuffles the characters inside a string using CSPRNG.
-     *
-     * @param string $string The string that needs to be shuffled.
-     *
-     * @return array Returns the string shuffled.
-     */
-    public static function randomStrShuffle(string $string): string
-    {
-        $array = \str_split($string);
-        $arrayValues = self::randomShuffle($array);
-        return \implode($arrayValues);
-    }
- 
-    /**
-     * randomShuffle().
-     *
-     * Shuffles arrays using CSPRNG.
-     *
-     * @param array $array The array that needs to be shuffled.
-     *
-     * @return array Returns the array shuffled.
-     */
-    public static function randomShuffle(array $array): array
-    {
-        $size = \count($array);
-        $keys = \array_keys($array);
-        for ($i = $size - 1; $i > 0; --$i)
-        {
-            $r = self::randomInt(0, $i);
-            if ($r !== $i)
-            {
-                $temp = $array[$keys[$r]];
-                $array[$keys[$r]] = $array[$keys[$i]];
-                $array[$keys[$i]] = $temp;
-            }
-        }
-        return \array_values($array);
-    }
  
     /**
      * randomInt().
@@ -67,7 +25,7 @@ abstract class AbstractRand
      */
     public static function randomInt(int $min, int $max): int
     {
-        return (int) \random_int($min, $max); 
+        return (\int) \random_int($min, $max); 
     }
   
     /**
@@ -81,7 +39,7 @@ abstract class AbstractRand
      */
     public static function randomBytes(int $length): string
     {
-        return (string) \random_bytes($length);
+        return (\string) \random_bytes($length);
     }
   
 }

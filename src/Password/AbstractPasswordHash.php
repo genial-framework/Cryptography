@@ -14,6 +14,17 @@ namespace Genial\Cryptography\Password;
 abstract AbstractPasswordHash
 {
  
-  
+    /**
+     * getHashInfo().
+     *
+     * @param string $hash The hash that will be tested.
+     *
+     * @return array Returns an array containing the hashing information used.
+     *               It will not return the actual plaintext.
+     */
+    public function getHashInfo(string $hash): array
+    {
+        return (array) \password_get_info($hash)
+    }
   
 }

@@ -30,4 +30,10 @@ final class BcryptTest extends TestCase
         $this->xbcrypt = new Bcrypt(1);
     }
     
+    public function testConstructor2()
+    {
+        $this->xbcrypt = new Bcrypt(12);
+    }
+    
+    
 }

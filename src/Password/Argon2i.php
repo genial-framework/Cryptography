@@ -26,7 +26,7 @@ class Argon2i extends AbstractPasswordHash implements PasswordHashInterface
     private $memoryCost = \PASSWORD_ARGON2_DEFAULT_MEMORY_COST;
     
     /**
-     * @var int $cost The cost `Argon2i` should use during execution.
+     * @var int $cost The time cost `Argon2i` should use during execution.
      */
     private $timeCost = \PASSWORD_ARGON2_DEFAULT_TIME_COST;
     

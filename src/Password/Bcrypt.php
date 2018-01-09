@@ -17,7 +17,7 @@ use \Genial\Cryptography\
 /**
  * Bcrypt.
  */
-class Bcrypt extends AbstractPasswordHash
+class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
 {
     
     /**

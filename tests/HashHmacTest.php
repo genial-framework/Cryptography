@@ -7,7 +7,12 @@
  
 namespace Genial\Cryptography;
 
-use PHPUnit\Framework\TestCase;
+use \PHPUnit\Framework\TestCase;
+
+use \Genial\Cryptography\
+{
+    UnexpectedValueException
+};
 
 /**
  * HashHmacTest.
@@ -40,7 +45,7 @@ final class HashHmacTest extends TestCase
     
     public function testCipher()
     {
-        $this->expectException(Exception\UnexpectedValueException::class);
+        $this->expectException(UnexpectedValueException::class);
         HashHmac::clearCachedAlgo();
         $showsError = HashHmac::cipher('foo-774', 'Hello world!', 'randomKey');
     }

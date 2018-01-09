@@ -27,7 +27,6 @@
     ],
     "require": {
         "php": "^7.0",
-        "paragonie/sodium_compat": "1.*",
         "ext-mbstring": "*",
         "ext-openssl": "*"
     },

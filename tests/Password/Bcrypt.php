@@ -48,7 +48,7 @@ final class BcryptTest extends TestCase
     
     public function testPasswordHash2()
     {
-        $this->expectException(RangeException::class);
+        $this->expectException(LengthException::class);
         $altHash = $this->xbcrypt->hash('5WvegR^-e_h5Q7zW#V@US5U$Y2*+UM3@u8?49Z--Dc?W-W#bm^9Kv!yv#rBJAH_eY7a&ma4SZFjW@ZcS');
     }
     

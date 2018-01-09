@@ -39,9 +39,9 @@ final class BcryptTest extends TestCase
     
     public function testPasswordHash()
     {
-        $altHash = $this->xbcrypt->hash('Hello world!');
+        $altHash = $this->xbcrypt->cipher('Hello world!');
         $this->assertTrue(Hash::getOutputSize($altHash) > 20);
-        $newHash = $this->xbcrypt->hash('Hello life!');
+        $newHash = $this->xbcrypt->cipher('Hello life!');
         $this->assertTrue(!Utils::hashEquals($newHash, $altHash));
         $this->assertTrue($newHash !== $altHash);
     }
@@ -49,7 +49,7 @@ final class BcryptTest extends TestCase
     public function testPasswordHash2()
     {
         $this->expectException(LengthException::class);
-        $altHash = $this->xbcrypt->hash('5WvegR^-e_h5Q7zW#V@US5U$Y2*+UM3@u8?49Z--Dc?W-W#bm^9Kv!yv#rBJAH_eY7a&ma4SZFjW@ZcS');
+        $altHash = $this->xbcrypt->cipher('5WvegR^-e_h5Q7zW#V@US5U$Y2*+UM3@u8?49Z--Dc?W-W#bm^9Kv!yv#rBJAH_eY7a&ma4SZFjW@ZcS');
     }
     
 }

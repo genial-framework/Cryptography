@@ -48,7 +48,19 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
         }
         $this->cost = $cost;
     }
-    
+ 
+    /**
+     * getCost().
+     *
+     * Get the current cost set.
+     *
+     * @return int Returns the current cost set.
+     */
+    public function getCost()
+    {
+        return $this->cost;
+    }
+ 
     /**
      * hash().
      *

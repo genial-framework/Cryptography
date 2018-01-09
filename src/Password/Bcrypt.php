@@ -9,9 +9,9 @@ namespace Genial\Cryptography\Password;
 
 use \Genial\Cryptography\
 {
-    Utils
+    Utils,
     Exception\{
-        RangeException
+        RangeException,
         LengthException
     }
 };

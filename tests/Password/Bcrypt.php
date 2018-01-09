@@ -22,10 +22,32 @@ use \Genial\Cryptography\
 final class BcryptTest extends TestCase
 {
     
+    private $xbcrypt;
+    private $bcrypt;
+    
     public function testConstructor()
     {
         $this->expectException(RangeException::class);
-        $bcrypt = new Bcrypt(1);
+        $this->xbcrypt = new Bcrypt(1);
+    }
+    
+    public function testCreateCostConstructor()
+    {
+        $this->bcrypt = new Bcrypt(12);
+    }
+    
+    public function testPasswordHash()
+    {
+        $this->expectException(LengthException::class);
+        $hashx = $this->bcrypt->hash('jJ#srmdMsy6qTXAQpnBKe?33xTsjtaSL8^r7@qKYBzAD+*AysU8qH&-=#^7mmSbsNw524BDJva');
+    }
+    
+    public function testPasswordHash2()
+    {
+        $hash = $this->bcrypt->hash('jJ#srmdMsy6qTXAQpnBKe?33xTs');
+        $this->assertEquals($this->bcrypt->verify('jJ#srmdMsy6qTXAQpnBKe?33xTs', $hash), [
+            'password_verified' => true,
+        ]);
     }
     
 }

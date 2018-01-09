@@ -33,7 +33,7 @@ final class BcryptTest extends TestCase
     public function testConstructor2()
     {
         $this->xbcrypt = new Bcrypt(12);
-        $this->assertTrue($this->xbcrypt->cost === 12);
+        $this->assertTrue($this->xbcrypt->getCost() === 12);
     }
     
     

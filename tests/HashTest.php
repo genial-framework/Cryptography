@@ -9,7 +9,7 @@ namespace Genial\Cryptography;
 
 use \PHPUnit\Framework\TestCase;
 
-use \Genial\Cryptography\
+use \Genial\Cryptography\Exception\
 {
     UnexpectedValueException
 };

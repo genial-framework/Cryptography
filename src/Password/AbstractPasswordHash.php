@@ -10,7 +10,7 @@ namespace Genial\Cryptography\Password;
 /**
  * AbstractPasswordHash.
  */
-abstract AbstractPasswordHash
+abstract class AbstractPasswordHash
 {
  
     /**

@@ -56,7 +56,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      *
      * @return int Returns the current cost set.
      */
-    public function getCost()
+    public function getCost(): int
     {
         return $this->cost;
     }
@@ -70,7 +70,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      *
      * @return string Returns the plaintext hashed using `Bcrypt`.
      */
-    public function cipher(string $plaintext)
+    public function cipher(string $plaintext): string
     {
         if (\mb_strlen($plaintext) > 72)
         {
@@ -95,7 +95,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      * @return array Returns an array wich contains either one or two keys, one is to tell you if the password is correct
      *               and the other one is a new hash that the old one should be replaced with.
      */
-    public function verify(string $plaintext, string $hash)
+    public function verify(string $plaintext, string $hash): array
     {
         if (\mb_strlen($plaintext) > 72)
         {

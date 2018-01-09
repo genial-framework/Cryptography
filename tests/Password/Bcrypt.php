@@ -34,7 +34,7 @@ final class BcryptTest extends TestCase
     public function __construct()
     {
         $this->bcrypt = new Bcrypt(12);
-        $this->assertInstanceOf($this->bcrypt, new Bcrypt(12));
+        $this->assertTrue($this->bcrypt instanceof Bcrypt);
     }
     
     public function testPasswordHash()

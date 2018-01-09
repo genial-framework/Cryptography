@@ -70,7 +70,7 @@ class Bcrypt extends AbstractPasswordHash
      *
      * @return string Returns the plaintext hashed using `Bcrypt`.
      */
-    public function cipher(string $plaintext): string
+    public function cipher(string $plaintext)
     {
         if (\mb_strlen($plaintext) > 72)
         {
@@ -95,7 +95,7 @@ class Bcrypt extends AbstractPasswordHash
      * @return array Returns an array wich contains either one or two keys, one is to tell you if the password is correct
      *               and the other one is a new hash that the old one should be replaced with.
      */
-    public function verify(string $plaintext, string $hash): array
+    public function verify(string $plaintext, string $hash)
     {
         if (\mb_strlen($plaintext) > 72)
         {

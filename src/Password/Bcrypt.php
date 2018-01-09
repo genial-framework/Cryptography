@@ -43,7 +43,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
             throw new RangeException(\sprintf(
                 '`%s` The cost passed is too low. Passed: `%s`.',
                 __METHOD__,
-                \htmlspecialchars($cost, \ENT_QUOTES, 'UTF-8');
+                \htmlspecialchars($cost, \ENT_QUOTES, 'UTF-8')
             ));
         }
         $this->cost = $cost;
@@ -63,7 +63,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
         if (\mb_strlen($plaintext) > 72)
         {
             throw new LengthException(\sprintf(
-                '`%s` The password to not be longer than 72 characters. Password length: `%s`.'
+                '`%s` The password is longer than 72 characters. Password length: `%s`.'
                 __METHOD__,
                 \htmlspecialchars(\mb_strlen($plaintext), \ENT_QUOTES, 'UTF-8')
             ));
@@ -88,7 +88,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
         if (\mb_strlen($plaintext) > 72)
         {
             throw new LengthException(\sprintf(
-                '`%s` The password to not be longer than 72 characters. Password length: `%s`.'
+                '`%s` The password is longer than 72 characters. Password length: `%s`.'
                 __METHOD__,
                 \htmlspecialchars(\mb_strlen($plaintext), \ENT_QUOTES, 'UTF-8')
             ));

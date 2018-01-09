@@ -9,9 +9,12 @@ namespace Genial\Cryptography;
 
 use \PHPUnit\Framework\TestCase;
 
-use \Genial\Cryptography\Exception\
-{
-    UnexpectedValueException
+use \Genial\Cryptography\{
+    Exception\{
+        RangeException,
+        LengthException
+    },
+    Password\Bcrypt;
 };
 
 /**
@@ -19,5 +22,11 @@ use \Genial\Cryptography\Exception\
  */
 final class BcryptTest extends TestCase
 {
-  
+    
+    public function testConstructor()
+    {
+        $this->expectException(RangeException::class);
+        $bcrypt = new Bcrypt(1);
+    }
+    
 }

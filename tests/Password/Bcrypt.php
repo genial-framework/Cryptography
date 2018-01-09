@@ -14,7 +14,7 @@ use \Genial\Cryptography\{
         RangeException,
         LengthException
     },
-    Password\Bcrypt;
+    Password\Bcrypt
 };
 
 /**

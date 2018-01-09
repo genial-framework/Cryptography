@@ -34,6 +34,8 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      *
      * @param int $cost The cost `Bcrypt` should use during execution.
      *
+     * @throws RangeException If the cost is too low.
+     *
      * @return void.
      */
     public function __construct(int $cost)
@@ -54,7 +56,12 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      *
      * Hash the plaintext using `Bcrypt`.
      *
+     * Using the PASSWORD_BCRYPT as the algorithm, will result in the password
+     * parameter being truncated to a maximum length of 72 characters.
+     *
      * @param string $plaintext The plaintext to hash during execution.
+     *
+     * @throws LengthException if the password is longer than 72 characters.
      *
      * @return string Returns the plaintext hashed using `Bcrypt`.
      */
@@ -77,8 +84,13 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
     /**
      * verify().
      *
+     * Using the PASSWORD_BCRYPT as the algorithm, will result in the password
+     * parameter being truncated to a maximum length of 72 characters.
+     *
      * @param string $plaintext The plaintext to verify against hash and rehash if needed.
      * @param string $hash      The hash the plaintext should mtch up to.
+     *
+     * @throws LengthException if the password is longer than 72 characters.
      *
      * @return array Returns an array which contains either one or two keys, one is to tell you if the password is correct
      *               and the other one is a new hash that the old one should be replaced with.

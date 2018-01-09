@@ -42,7 +42,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
         {
             throw new RangeException(\sprintf(
                 '`%s` The cost passed is too low. Passed: `%s`.',
-                \__METHOD__,
+                __METHOD__,
                 \htmlspecialchars($cost, \ENT_QUOTES, 'UTF-8');
             ));
         }

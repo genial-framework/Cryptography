@@ -80,7 +80,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      * @param string $plaintext The plaintext to verify against hash and rehash if needed.
      * @param string $hash      The hash the plaintext should mtch up to.
      *
-     * @return array Returns an array wich contains either one or two keys, one is to tell you if the password is correct
+     * @return array Returns an array which contains either one or two keys, one is to tell you if the password is correct
      *               and the other one is a new hash that the old one should be replaced with.
      */
     public function verify(string $plaintext, string $hash): array

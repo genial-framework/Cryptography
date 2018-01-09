@@ -1,12 +1,7 @@
 [![Coveralls github branch](https://img.shields.io/coveralls/github/Genial-Components/Cryptography/master.svg?style=flat-square)](https://coveralls.io/github/Genial-Components/Cryptography?branch=master) [![Travis](https://img.shields.io/travis/Genial-Components/Cryptography.svg?style=flat-square)](https://travis-ci.org/Genial-Components/Cryptography) 
 
 ---------------------
-## Genial\Cryptography
-
 Cryptography component by Genial Framework.
-
-> If you looking to be a dedicated contributor please <br />
-> send an email to nenglish0820@outlook.com.
 
 ## Installation
 

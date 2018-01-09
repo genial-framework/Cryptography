@@ -47,4 +47,34 @@ final class BcryptTest extends TestCase
         $altHash = $xbcrypt->cipher('5WvegR^-e_h5Q7zW#V@US5U$Y2*+UM3@u8?49Z--Dc?W-W#bm^9Kv!yv#rBJAH_eY7a&ma4SZFjW@ZcS');
     }
     
+    public function testPasswordVerify()
+    {
+        $this->expectException(LengthException::class);
+        $xbcrypt = new Bcrypt(12);
+        $altHash = $xbcrypt->verify('5WvegR^-e_h5Q7zW#V@US5U$Y2*+UM3@u8?49Z--Dc?W-W#bm^9Kv!yv#rBJAH_eY7a&ma4SZFjW@ZcS', '%nodata%');
+    }
+    
+    public function testPasswordVerify2()
+    {
+        $xbcrypt = new Bcrypt(12);
+        $altHash = $xbcrypt->cipher('Hello world!');
+        $altHash2 = \password_hash('Hello world!', \PASSWORD_ARGON2I, [
+            'memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
+            'time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
+            'threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
+        ]);
+        $res = $xbcrypt->verify('Hello life!', $altHash);
+        $res2 = $xbcrypt->verify('Hello world!', $altHash);
+        $res3 = $xbcrypt->verify('Hello world!', $altHash2);
+        $this->assertEquals($res, [
+            'password_verified' => \false,
+        ]);
+        $this->assertEquals($res2, [
+            'password_verified' => \true,
+        ]);
+        $this->assertTrue(\count($res) === 1);
+        $this->assertTrue(\count($res2) === 1);
+        $this->assertTrue(\count($res3) === 2);
+    }
+    
 }

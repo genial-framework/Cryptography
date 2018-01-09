@@ -30,10 +30,21 @@ final class BcryptTest extends TestCase
         $this->xbcrypt = new Bcrypt(1);
     }
     
-    public function testConstructor2()
+    public function testPasswordHash()
     {
-        var_dump($this->xbcrypt);
+        $xbcrypt = new Bcrypt(12);
+        $altHash = $xbcrypt->cipher('Hello world!');
+        $this->assertTrue(Hash::getOutputSize($altHash) > 20);
+        $newHash = $xbcrypt->cipher('Hello life!');
+        $this->assertTrue(!Utils::hashEquals($newHash, $altHash));
+        $this->assertTrue($newHash !== $altHash);
     }
     
+    public function testPasswordHash2()
+    {
+        $this->expectException(LengthException::class);
+        $xbcrypt = new Bcrypt(12);
+        $altHash = $xbcrypt->cipher('5WvegR^-e_h5Q7zW#V@US5U$Y2*+UM3@u8?49Z--Dc?W-W#bm^9Kv!yv#rBJAH_eY7a&ma4SZFjW@ZcS');
+    }
     
 }

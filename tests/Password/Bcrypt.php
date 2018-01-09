@@ -43,7 +43,7 @@ final class BcryptTest extends TestCase
         $this->assertTrue(Hash::getOutputSize($altHash) > 20);
         $newHash = $this->xbcrypt->hash('Hello life!');
         $this->assertTrue(!Utils::hashEquals($newHash, $altHash));
-        $this->assertTrue($newHash !== $altHash));
+        $this->assertTrue($newHash !== $altHash);
     }
     
     public function testPasswordHash2()

@@ -7,7 +7,7 @@
 
 namespace Genial\Cryptography;
 
-use PHPUnit\Framework\TestCase;
+use \PHPUnit\Framework\TestCase;
 
 /**
  * AbstractRandTest.

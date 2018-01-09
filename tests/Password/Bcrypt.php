@@ -9,11 +9,10 @@ namespace Genial\Cryptography;
 
 use \PHPUnit\Framework\TestCase;
 
-use \Genial\Cryptography\{
-    Exception\{
-        RangeException,
-        LengthException
-    },
+use \Genial\Cryptography\
+{
+    Exception\RangeException,
+    Exception\LengthException,
     Password\Bcrypt
 };
 

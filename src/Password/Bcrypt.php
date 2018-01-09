@@ -36,7 +36,7 @@ class Bcrypt extends AbstractPasswordHash
      *
      * @return void.
      */
-    function __construct(int $cost)
+    public function __construct(int $cost)
     {
         if ($cost < 2)
         {

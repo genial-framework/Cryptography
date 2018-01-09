@@ -13,8 +13,8 @@ namespace Genial\Cryptography\Password;
 interface PasswordHashInterface
 {
   
-    public function hash(string $plaintext): string
+    public function hash(string $plaintext): string;
     
-    public function verify(string $plaintext, string $hash): array
+    public function verify(string $plaintext, string $hash): array;
   
 }

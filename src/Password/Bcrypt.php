@@ -10,10 +10,8 @@ namespace Genial\Cryptography\Password;
 use \Genial\Cryptography\
 {
     Utils,
-    Exception\{
-        RangeException,
-        LengthException
-    }
+    Exception\RangeException,
+    Exception\LengthException
 };
 
 /**

@@ -36,7 +36,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface, Bcry
      *
      * @return void.
      */
-    function __construct(int $cost): void
+    function __construct(int $cost)
     {
         if ($cost < 2)
         {

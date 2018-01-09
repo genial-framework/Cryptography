@@ -62,7 +62,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
     }
  
     /**
-     * hash().
+     * cipher().
      *
      * Hash the plaintext using `Bcrypt`.
      *
@@ -70,7 +70,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      *
      * @return string Returns the plaintext hashed using `Bcrypt`.
      */
-    public function hash(string $plaintext): string
+    public function cipher(string $plaintext): string
     {
         if (\mb_strlen($plaintext) > 72)
         {
@@ -112,7 +112,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
             [
                 'cost' => $this->cost,
             ])) {
-                $hash = $this->hash($plaintext);
+                $hash = $this->cipher($plaintext);
             }
             if (!Utils::hashEquals($temp, $hash))
             {

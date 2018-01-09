@@ -1,4 +1,3 @@
-
 <?php
 /**
  * @link      <https://github.com/Genial-Components/Cryptography> for the canonical source repository.

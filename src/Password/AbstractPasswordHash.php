@@ -23,7 +23,7 @@ abstract class AbstractPasswordHash
      */
     public function getHashInfo(string $hash): array
     {
-        return (array) \password_get_info($hash)
+        return (array) \password_get_info($hash);
     }
   
 }

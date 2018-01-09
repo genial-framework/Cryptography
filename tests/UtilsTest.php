@@ -1,13 +1,13 @@
 <?php
 /**
- * @link      <https://github.com/Genial-Framework/Cryptography> for the canonical source repository.
- * @copyright Copyright (c) 2017-2019 Genial Framework. <https://github.com/Genial-Components>
- * @license   <https://github.com/Genial-Framework/Cryptography/blob/master/LICENSE> New BSD License.
+ * @link      <https://github.com/Genial-Components/Cryptography> for the canonical source repository.
+ * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
+ * @license   <https://github.com/Genial-Components/Cryptography/blob/master/LICENSE> New BSD License.
  */
 
 namespace Genial\Cryptography;
 
-use PHPUnit\Framework\TestCase;
+use \PHPUnit\Framework\TestCase;
 
 /**
  * UtilsTest.
@@ -38,13 +38,7 @@ final class UtilsTest extends TestCase
     
     public function testHashHmacAlgos()
     {
-        if (\function_exists('hash_hmac_algos'))
-        {
-            $this->assertEquals(\hash_hmac_algos(), Utils::hashHmacAlgos());
-        } else
-        {
-            $this->assertEquals(\hash_algos(), Utils::hashHmacAlgos());
-        }
+        $this->assertEquals(\hash_hmac_algos(), Utils::hashHmacAlgos());
     }
   
 }

@@ -5,14 +5,9 @@
  * @license   <https://github.com/Genial-Components/Cryptography/blob/master/LICENSE> New BSD License.
  */
  
-namespace Genial\Cryptography\Password;
+namespace Genial\Crypt\Password;
 
-use \Genial\Cryptography\
-{
-    Utils,
-    Exception\RangeException,
-    Exception\LengthException
-};
+use \Genial\Crypt\Exception;
 
 /**
  * Bcrypt.
@@ -21,7 +16,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
 {
     
     /**
-     * @var int $cost The cost `Bcrypt` should use during execution.
+     * @var int $cost|10 The cost `Bcrypt` should use during execution.
      */
     private $cost = 10;
   
@@ -29,8 +24,6 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      * __construct().
      *
      * Set the avaliable options for `Bcrypt` hashing.
-     *
-     * The salt option has been deprecated as of PHP 7.0.0.
      *
      * @param int $cost The cost `Bcrypt` should use during execution.
      *
@@ -42,7 +35,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
     {
         if ($cost < 2)
         {
-            throw new RangeException(\sprintf(
+            throw new Exception\RangeException(\sprintf(
                 '`%s` The cost passed is too low. Passed: `%s`.',
                 __METHOD__,
                 \htmlspecialchars($cost, \ENT_QUOTES, 'UTF-8')
@@ -56,20 +49,17 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      *
      * Hash the plaintext using `Bcrypt`.
      *
-     * Using the PASSWORD_BCRYPT as the algorithm, will result in the password
-     * parameter being truncated to a maximum length of 72 characters.
-     *
      * @param string $plaintext The plaintext to hash during execution.
      *
      * @throws LengthException if the password is longer than 72 characters.
      *
      * @return string Returns the plaintext hashed using `Bcrypt`.
      */
-    public function cipher(string $plaintext): string
+    public function cipher(string $plaintext)
     {
         if (\mb_strlen($plaintext) > 72)
         {
-            throw new LengthException(\sprintf(
+            throw new Exception\LengthException(\sprintf(
                 '`%s` The password is longer than 72 characters. Password length: `%s`.',
                 __METHOD__,
                 \htmlspecialchars(\mb_strlen($plaintext), \ENT_QUOTES, 'UTF-8')
@@ -83,9 +73,6 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
     
     /**
      * verify().
-     *
-     * Using the PASSWORD_BCRYPT as the algorithm, will result in the password
-     * parameter being truncated to a maximum length of 72 characters.
      *
      * @param string $plaintext The plaintext to verify against hash and rehash if needed.
      * @param string $hash      The hash the plaintext should mtch up to.

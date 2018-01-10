@@ -7,9 +7,9 @@ Cryptography component for Genial Framework.
 
 ### Prerequisites
 
-> PHP ^5.6|^7.0
-> [Mbstring](https://secure.php.net/manual/en/book.mbstring.php) Extension
-> [OpenSSL](https://secure.php.net/manual/en/book.openssl.php) Extension
+- PHP ^5.6|^7.0
+- [Mbstring](https://secure.php.net/manual/en/book.mbstring.php) Extension
+- [OpenSSL](https://secure.php.net/manual/en/book.openssl.php) Extension
 
 ### Installation
 

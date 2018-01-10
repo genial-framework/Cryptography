@@ -23,7 +23,7 @@ abstract class AbstractPasswordHash
      * @return array Returns an array containing the hashing information used.
      *               It will not return the actual plaintext.
      */
-    public function getHashInfo(string $hash): array
+    public function getHashInfo(string $hash)
     {
         return (array) \password_get_info($hash);
     }

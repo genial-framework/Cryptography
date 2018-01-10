@@ -33,7 +33,7 @@ final class UtilsTest extends TestCase
     
     public function testHashAlgos()
     {
-        $this->assertEquals(\hash_algos(), Utils::hashAlgos());
+        $this->assertEquals((array) \hash_algos(), Utils::hashAlgos());
     }
     
     public function testHashHmacAlgos()

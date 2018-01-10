@@ -49,16 +49,12 @@ final class BcryptTest extends TestCase
     
     public function testPasswordVerify2()
     {
+        $bcrypt = new Password\Bcrypt(16);
         $xbcrypt = new Password\Bcrypt(12);
-        $altHash = $xbcrypt->cipher('Hello world!');
-        $altHash2 = \password_hash('Hello world!', \PASSWORD_ARGON2I, [
-            'memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-            'time_cost' => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
-            'threads' => \PASSWORD_ARGON2_DEFAULT_THREADS,
-        ]);
+        $altHash = $xbcrypt->cipher('Hello world!');]
         $res = $xbcrypt->verify('Hello life!', $altHash);
         $res2 = $xbcrypt->verify('Hello world!', $altHash);
-        $res3 = $xbcrypt->verify('Hello world!', $altHash2);
+        $res3 = $bcrypt->verify('Hello world!', $altHash);
         $this->assertEquals($res, [
             'password_verified' => \false,
         ]);

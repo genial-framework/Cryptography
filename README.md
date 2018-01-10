@@ -32,7 +32,7 @@ composer require genial-framework/cryptography
 > The contributing section has not been created yet.
 
 ## License
-This library is licensed under the `BSD-3-Clause` license.
+This library is licensed under the [`BSD-3-Clause` license](https://github.com/Genial-Components/Cryptography/blob/master/LICENSE.md).
 
 ## Links
 

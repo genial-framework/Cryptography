@@ -23,7 +23,7 @@ class Utils extends AbstractRand
      *
      * @return bool Returns TRUE when the two strings are equal, FALSE otherwise.
      */
-    public static function hashEquals(string $knownString, string $userString)
+    public static function hashEquals($knownString, $userString)
     {
         return (bool) \hash_equals($knownString, $userString);
     }

@@ -5,14 +5,9 @@
  * @license   <https://github.com/Genial-Components/Cryptography/blob/master/LICENSE> New BSD License.
  */
  
-namespace Genial\Cryptography;
+namespace Genial\Crypt;
 
 use \PHPUnit\Framework\TestCase;
-
-use \Genial\Cryptography\Exception\
-{
-    UnexpectedValueException
-};
 
 /**
  * HashTest.
@@ -45,7 +40,7 @@ final class HashTest extends TestCase
     
     public function testCipher()
     {
-        $this->expectException(UnexpectedValueException::class);
+        $this->expectException(Exception\UnexpectedValueException::class);
         Hash::clearCachedAlgo();
         $showsError = Hash::cipher('foo-774', 'Hello world!');
     }

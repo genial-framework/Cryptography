@@ -7,6 +7,7 @@
  
 namespace Genial\Crypt\Password;
 
+use \Genial\Crypt\Utils;
 use \Genial\Crypt\Exception\LengthException;
 
 /**

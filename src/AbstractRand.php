@@ -23,7 +23,7 @@ abstract class AbstractRand
      *
      * @return int Returns a cryptographically secure random integer in the range min to max, inclusive.
      */
-    public static function randomInt(int $min, int $max)
+    public static function randomInt($min, $max)
     {
         return (int) \random_int($min, $max); 
     }
@@ -37,7 +37,7 @@ abstract class AbstractRand
      *
      * @return string Returns a string containing the requested number of cryptographically secure random bytes.
      */
-    public static function randomBytes(int $length)
+    public static function randomBytes($length)
     {
         return (string) \random_bytes($length);
     }

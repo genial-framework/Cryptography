@@ -7,7 +7,7 @@
  
 namespace Genial\Crypt\Password;
 
-use \Genial\Crypt\Exception;
+use \Genial\Crypt\Exception\LengthException;
 
 /**
  * Bcrypt.
@@ -35,7 +35,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
     {
         if ($cost < 2)
         {
-            throw new Exception\RangeException(\sprintf(
+            throw new LengthException(\sprintf(
                 '`%s` The cost passed is too low. Passed: `%s`.',
                 __METHOD__,
                 \htmlspecialchars($cost, \ENT_QUOTES, 'UTF-8')
@@ -59,7 +59,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
     {
         if (\mb_strlen($plaintext) > 72)
         {
-            throw new Exception\LengthException(\sprintf(
+            throw new LengthException(\sprintf(
                 '`%s` The password is longer than 72 characters. Password length: `%s`.',
                 __METHOD__,
                 \htmlspecialchars(\mb_strlen($plaintext), \ENT_QUOTES, 'UTF-8')

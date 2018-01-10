@@ -1,7 +1,7 @@
-[![Coveralls github branch](https://img.shields.io/coveralls/github/Genial-Components/Cryptography/master.svg?style=flat-square)](https://coveralls.io/github/Genial-Components/Cryptography?branch=master) [![Travis](https://img.shields.io/travis/Genial-Components/Cryptography.svg?style=flat-square)](https://travis-ci.org/Genial-Components/Cryptography) 
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/genial-framework/cryptography.svg?style=flat-square)]() [![Coveralls github branch](https://img.shields.io/coveralls/github/Genial-Components/Cryptography/master.svg?style=flat-square)](https://coveralls.io/github/Genial-Components/Cryptography?branch=master) [![Travis](https://img.shields.io/travis/Genial-Components/Cryptography.svg?style=flat-square)](https://travis-ci.org/Genial-Components/Cryptography) 
 
 ---------------------
-Cryptography component by Genial Framework.
+Cryptography component for Genial Framework.
 
 ## Installation
 

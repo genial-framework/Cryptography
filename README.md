@@ -3,7 +3,9 @@
 ---------------------
 Cryptography component for Genial Framework.
 
-## Installation
+## Getting Started
+
+### Installation
 
 > Composer should be used as your main dependency manager.
 

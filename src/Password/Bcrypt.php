@@ -31,8 +31,9 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      *
      * @return void.
      */
-    public function __construct(int $cost)
+    public function __construct($cost)
     {
+        $cost = intval($cost);
         if ($cost < 2)
         {
             throw new LengthException(\sprintf(
@@ -41,7 +42,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
                 \htmlspecialchars($cost, \ENT_QUOTES, 'UTF-8')
             ));
         }
-        $this->cost = $cost;
+        $this->cost = (int) $cost;
     }
  
     /**
@@ -55,8 +56,9 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      *
      * @return string Returns the plaintext hashed using `Bcrypt`.
      */
-    public function cipher(string $plaintext)
+    public function cipher($plaintext)
     {
+        $plaintext = \strval($plaintext);
         if (\mb_strlen($plaintext) > 72)
         {
             throw new LengthException(\sprintf(
@@ -84,6 +86,8 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      */
     public function verify(string $plaintext, string $hash)
     {
+        $hash = \strval($hash);
+        $plaintext = \strval($plaintext);
         if (\mb_strlen($plaintext) > 72)
         {
             throw new LengthException(\sprintf(

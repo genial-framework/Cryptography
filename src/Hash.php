@@ -37,12 +37,12 @@ class Hash
      * @return string Returns a string containing the calculated message digest as lowercase hexits unless raw_output is set to true in
      *                which case the raw binary representation of the message digest is returned.
      */
-    public static function cipher(string $hashAlgo, string $data, $rawOutput = self::RAW_OUTPUT)
+    public static function cipher($hashAlgo, $data, $rawOutput = self::RAW_OUTPUT)
     {
         if (self::supportedAlgo($hashAlgo))
         {
             self::$cachedAlgo = $hashAlgo;
-            return (string) \hash($hashAlgo, $data, \boolval($rawOutput));
+            return (string) \hash($hashAlgo, $data, $rawOutput);
         } else
         {
             throw new Exception\UnexpectedValueException(\sprintf(
@@ -62,9 +62,9 @@ class Hash
      *
      * @return bool Returns the output size of the hash.
      */
-    public static function getOutputSize(string $hash)
+    public static function getOutputSize($hash)
     {
-        return \mb_strlen($hash, '8bit');
+        return (int) \mb_strlen($hash, '8bit');
     }
     
     /**
@@ -76,7 +76,7 @@ class Hash
      *
      * @return bool Returns TRUE if the algorithm is supported otherwise return FALSE.
      */
-    public static function supportedAlgo(string $algo)
+    public static function supportedAlgo($algo)
     {
         if ($algo === self::$cachedAlgo)
         {

@@ -1,16 +1,11 @@
 <?php
 /**
  * @link      <https://github.com/Genial-Components/Cryptography> for the canonical source repository.
- * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
+ * @copyright Copyright (c) 2017-2019 Genial Framework. <https://github.com/Genial-Framework>
  * @license   <https://github.com/Genial-Components/Cryptography/blob/master/LICENSE> New BSD License.
  */
  
-namespace Genial\Cryptography;
-
-use \Genial\Cryptography\Exception\
-{
-    UnexpectedValueException
-};
+namespace Genial\Crypt;
 
 /**
  * HashHmac.
@@ -43,7 +38,7 @@ class HashHmac
      * @return string Returns a string containing the calculated message digest as lowercase hexits unless raw_output is set to true in
      *                which case the raw binary representation of the message digest is returned.
      */
-    public static function cipher(string $hashAlgo, string $data, string $sharedKey, $rawOutput = self::RAW_OUTPUT): string
+    public static function cipher(string $hashAlgo, string $data, string $sharedKey, $rawOutput = self::RAW_OUTPUT)
     {
         if (self::supportedAlgo($hashAlgo))
         {
@@ -51,7 +46,7 @@ class HashHmac
             return (string) \hash_hmac($hashAlgo, $data, $sharedKey, \boolval($rawOutput));
         } else
         {
-            throw new UnexpectedValueException(\sprintf(
+            throw new Exception\UnexpectedValueException(\sprintf(
                 '`%s` `%s` is not supported.',
                 __METHOD__,
                 \htmlspecialchars($hashAlgo, \ENT_QUOTES, 'UTF-8')
@@ -68,7 +63,7 @@ class HashHmac
      *
      * @return bool Returns the output size of the hash.
      */
-    public static function getOutputSize(string $hash): int
+    public static function getOutputSize(string $hash)
     {
         return (int) Hash::getOutputSize($hash);
     }
@@ -82,7 +77,7 @@ class HashHmac
      *
      * @return bool Returns TRUE if the algorithm is supported otherwise return FALSE.
      */
-    public static function supportedAlgo(string $algo): bool
+    public static function supportedAlgo(string $algo)
     {
         if ($algo === self::$cachedAlgo)
         {

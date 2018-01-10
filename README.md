@@ -5,6 +5,12 @@ Cryptography component for Genial Framework.
 
 ## Getting Started
 
+### Prerequisites
+
+> PHP ^5.6|^7.0
+> [Mbstring](https://secure.php.net/manual/en/book.mbstring.php) Extension
+> [OpenSSL](https://secure.php.net/manual/en/book.openssl.php) Extension
+
 ### Installation
 
 > Composer should be used as your main dependency manager.

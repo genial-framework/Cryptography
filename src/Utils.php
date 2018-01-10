@@ -1,7 +1,7 @@
 <?php
 /**
  * @link      <https://github.com/Genial-Components/Cryptography> for the canonical source repository.
- * @copyright Copyright (c) 2017-2018 Genial Framework. <https://github.com/Genial-Framework>
+ * @copyright Copyright (c) 2017-2019 Genial Framework. <https://github.com/Genial-Framework>
  * @license   <https://github.com/Genial-Components/Cryptography/blob/master/LICENSE> New BSD License.
  */
 
@@ -23,7 +23,7 @@ class Utils extends AbstractRand
      *
      * @return bool Returns TRUE when the two strings are equal, FALSE otherwise.
      */
-    public static function hashEquals(string $knownString, string $userString): bool
+    public static function hashEquals(string $knownString, string $userString)
     {
         return (bool) \hash_equals($knownString, $userString);
     }
@@ -35,7 +35,7 @@ class Utils extends AbstractRand
      *
      * @return array Returns a numerically indexed array containing the list of supported hashing algorithms.
      */
-    public static function hashAlgos(): array
+    public static function hashAlgos()
     {
         return (array) \hash_algos();
     }
@@ -47,9 +47,13 @@ class Utils extends AbstractRand
      *
      * @return array Returns a numerically indexed array containing the list of supported hashing algorithms suitable for hash_hmac().
      */
-    public static function hashHmacAlgos(): array
+    public static function hashHmacAlgos()
     {
-        return (array) \hash_hmac_algos();
+        if (function_exists('hash_hmac_algos'))
+        {
+            return (array) \hash_hmac_algos();
+        }
+        return self::hashAlgos();
     }
     
 }

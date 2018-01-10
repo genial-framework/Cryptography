@@ -49,7 +49,7 @@ final class BcryptTest extends TestCase
     
     public function testPasswordVerify2()
     {
-        $xbcrypt = new Bcrypt(12);
+        $xbcrypt = new Password\Bcrypt(12);
         $altHash = $xbcrypt->cipher('Hello world!');
         $altHash2 = \password_hash('Hello world!', \PASSWORD_ARGON2I, [
             'memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,

@@ -21,7 +21,7 @@ Cryptography component for Genial Framework.
 
 Composer makes it easier to keep vendor libraries out of your repo, meaning that only application <br />code goes in the git repository. It literally does all the work for you so maintaining the latest versions <br />of all required libraries iseasier because you can simply run `composer update` to get the latest compatible <br />packages.
 
-You can use the installer by going to their [website](https://getcomposer.org/) and clicking download and it will show all the installation instructions. <br />Once it has been installed correctly you proceed with running the console command below.
+You can use the installer by going to their [website](https://getcomposer.org/) and clicking download and it will show all the installation <br />instructions.Once it has been installed correctly you proceed with running the console command below.
 
 ```sh
 composer require genial-framework/cryptography

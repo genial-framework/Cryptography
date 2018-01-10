@@ -38,7 +38,7 @@ final class UtilsTest extends TestCase
     
     public function testHashHmacAlgos()
     {
-        if (version_compare(PHP_VERSION, '7.2.0', '>='))
+        if (\version_compare(\PHP_VERSION, '7.2.0', '>='))
         {
             $this->assertEquals(\hash_hmac_algos(), Utils::hashHmacAlgos());
         }

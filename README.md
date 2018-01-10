@@ -27,13 +27,6 @@ You can use the installer by going to their [website](https://getcomposer.org/) 
 composer require genial-framework/cryptography
 ```
 
-## Contributing
-
-> The contributing section has not been created yet.
-
-## License
-This library is licensed under the [`BSD-3-Clause` license](https://github.com/Genial-Components/Cryptography/blob/master/LICENSE.md).
-
 ## Links
 
 - File issues at https://github.com/Genial-Framework/Cryptography/issues

@@ -5,7 +5,7 @@
  * @license   <https://github.com/Genial-Components/Cryptography/blob/master/LICENSE> New BSD License.
  */
 
-namespace Genial\Cryptography;
+namespace Genial\Crypt;
 
 /**
  * Utils.

@@ -38,12 +38,12 @@ class HashHmac
      * @return string Returns a string containing the calculated message digest as lowercase hexits unless raw_output is set to true in
      *                which case the raw binary representation of the message digest is returned.
      */
-    public static function cipher(string $hashAlgo, string $data, string $sharedKey, $rawOutput = self::RAW_OUTPUT)
+    public static function cipher($hashAlgo, $data, $sharedKey, $rawOutput = self::RAW_OUTPUT)
     {
         if (self::supportedAlgo($hashAlgo))
         {
             self::$cachedAlgo = $hashAlgo;
-            return (string) \hash_hmac($hashAlgo, $data, $sharedKey, \boolval($rawOutput));
+            return (string) \hash_hmac($hashAlgo, $data, $sharedKey, $rawOutput);
         } else
         {
             throw new Exception\UnexpectedValueException(\sprintf(
@@ -63,7 +63,7 @@ class HashHmac
      *
      * @return bool Returns the output size of the hash.
      */
-    public static function getOutputSize(string $hash)
+    public static function getOutputSize($hash)
     {
         return (int) Hash::getOutputSize($hash);
     }
@@ -77,7 +77,7 @@ class HashHmac
      *
      * @return bool Returns TRUE if the algorithm is supported otherwise return FALSE.
      */
-    public static function supportedAlgo(string $algo)
+    public static function supportedAlgo($algo)
     {
         if ($algo === self::$cachedAlgo)
         {

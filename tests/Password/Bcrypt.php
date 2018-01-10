@@ -10,7 +10,7 @@ namespace Genial\Crypt;
 use \PHPUnit\Framework\TestCase;
 
 /**
- * HashTest.
+ * BcryptTest.
  */
 final class BcryptTest extends TestCase
 {

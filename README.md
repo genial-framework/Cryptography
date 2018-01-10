@@ -9,7 +9,8 @@ Cryptography component for Genial Framework.
 > It is recommended that you use the latest version of PHP <br />
 
 > It is also recommended that if you use PHP 5.6 that you use the latest <br />
-> version for 5.6. The same goes with PHP 7.0, PHP 7.1, and PHP 7.2. 
+> version for that version to prevent bugs. The same goes with PHP 7.0, PHP 7.1, <br>
+> and PHP 7.2. 
 
 - PHP `^5.6|^7.0`
 - [Mbstring](https://secure.php.net/manual/en/book.mbstring.php) Extension

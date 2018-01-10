@@ -51,7 +51,7 @@ final class BcryptTest extends TestCase
     {
         $bcrypt = new Password\Bcrypt(16);
         $xbcrypt = new Password\Bcrypt(12);
-        $altHash = $xbcrypt->cipher('Hello world!');]
+        $altHash = $xbcrypt->cipher('Hello world!');
         $res = $xbcrypt->verify('Hello life!', $altHash);
         $res2 = $xbcrypt->verify('Hello world!', $altHash);
         $res3 = $bcrypt->verify('Hello world!', $altHash);

@@ -5,7 +5,7 @@
  * @license   <https://github.com/Genial-Components/Cryptography/blob/master/LICENSE> New BSD License.
  */
 
-namespace Genial\Cryptography;
+namespace Genial\Crypt;
 
 use \PHPUnit\Framework\TestCase;
 
@@ -38,7 +38,11 @@ final class UtilsTest extends TestCase
     
     public function testHashHmacAlgos()
     {
-        $this->assertEquals(\hash_hmac_algos(), Utils::hashHmacAlgos());
+        if (version_compare(PHP_VERSION, '7.2.0', '>='))
+        {
+            $this->assertEquals(\hash_hmac_algos(), Utils::hashHmacAlgos());
+        }
+        $this->assertEquals(Utils::hashAlgos(), Utils::hashHmacAlgos());
     }
   
 }

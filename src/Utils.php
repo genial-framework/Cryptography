@@ -49,7 +49,7 @@ class Utils extends AbstractRand
      */
     public static function hashHmacAlgos()
     {
-        if (\version_compare(\PHP_VERSION, '7.2.0', '>='))
+        if (function_exists('hash_hmac_algos'))
         {
             return (array) \hash_hmac_algos();
         }

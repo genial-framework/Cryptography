@@ -2,15 +2,12 @@
     "name": "genial-framework/cryptography",
     "type": "library",
     "keywords": [
-        "cryptography-tools",
-        "hashing-passwords",
-        "encryption",
         "php7",
         "php-component",
-        "cryptography-component"
+        "php-library"
     ],
     "description": "Cryptography component by Genial Framework. ",
-    "homepage": "https://github.com/Genial-Framework/Cryptography",
+    "homepage": "https://github.com/Genial-Components/Cryptography",
     "license": "BSD-3-Clause",
     "authors": [
         {
@@ -21,18 +18,20 @@
         },
         {
             "name": "Genial Contributors",
-            "homepage": "https://github.com/orgs/Genial-Framework/people",
+            "homepage": "https://github.com/orgs/Genial-Components/people",
             "role": "Contribute"
         }
     ],
     "require": {
-        "php": "^7.0",
+        "php": "^5.6",
+        "paragonie/random_compat": "2.*",
+        "paragonie/sodium_compat": "1.*",
         "ext-mbstring": "*",
         "ext-openssl": "*"
     },
     "autoload": {
         "psr-4": {
-            "Genial\\Cryptography\\": "src/"
+            "Genial\\Crypt\\": "src/"
         }
     },
     "require-dev": {

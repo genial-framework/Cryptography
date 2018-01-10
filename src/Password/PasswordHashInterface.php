@@ -13,7 +13,7 @@ namespace Genial\Crypt\Password;
 interface PasswordHashInterface
 {
   
-    public function cipher(string $plaintext);
-    public function verify(string $plaintext, string $hash);
+    public function cipher($plaintext);
+    public function verify($plaintext, $hash);
   
 }

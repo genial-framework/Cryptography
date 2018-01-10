@@ -31,6 +31,9 @@ composer require genial-framework/cryptography
 
 > The contributing section has not been created yet.
 
+## License
+This library is licensed under the `BSD-3-Clause` license.
+
 ## Links
 
 - File issues at https://github.com/Genial-Framework/Cryptography/issues

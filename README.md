@@ -1,11 +1,12 @@
 [![PHP from Packagist](https://img.shields.io/packagist/php-v/genial-framework/cryptography.svg?style=flat-square)]() [![Coveralls github branch](https://img.shields.io/coveralls/github/Genial-Components/Cryptography/master.svg?style=flat-square)](https://coveralls.io/github/Genial-Components/Cryptography?branch=master) [![Travis](https://img.shields.io/travis/Genial-Components/Cryptography.svg?style=flat-square)](https://travis-ci.org/Genial-Components/Cryptography) 
 
 ---------------------
+## Getting Started
 Cryptography component for Genial Framework.
 
-## Getting Started
-
 ### Prerequisites
+
+> It is recommended that you use the latest version of php
 
 - PHP ^5.6|^7.0
 - [Mbstring](https://secure.php.net/manual/en/book.mbstring.php) Extension

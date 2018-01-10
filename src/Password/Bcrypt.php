@@ -82,7 +82,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      * @return array Returns an array which contains either one or two keys, one is to tell you if the password is correct
      *               and the other one is a new hash that the old one should be replaced with.
      */
-    public function verify(string $plaintext, string $hash)
+    public function verify($plaintext, $hash)
     {
         if (\mb_strlen($plaintext) > 72)
         {

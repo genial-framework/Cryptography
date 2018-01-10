@@ -6,7 +6,7 @@
         "php-component",
         "php-library"
     ],
-    "description": "Cryptography component by Genial Framework. ",
+    "description": "Cryptography component for Genial Framework.",
     "homepage": "https://github.com/Genial-Components/Cryptography",
     "license": "BSD-3-Clause",
     "authors": [

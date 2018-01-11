@@ -105,16 +105,16 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
             if (!Utils::hashEquals((string) $temp, (string) $hash))
             {
                 return (array) [
-                    'password_verified' => \true,
+                    'password_verified' => (bool) \true,
                     'new_hash' => (string) $hash
                 ];
             }
             return (array) [
-                'password_verified' => \true
+                'password_verified' => (bool) \true
             ];
         }
         return (array) [
-            'password_verified' => \false
+            'password_verified' => (bool) \false
         ];
     }
     

@@ -47,7 +47,7 @@ class HashHmac
         } else
         {
             throw new Exception\UnexpectedValueException(\sprintf(
-                '`%s` `%s` is not supported.',
+                '`%s` The algorithm is not supported. Passed `%s`.',
                 __METHOD__,
                 \htmlspecialchars((string) $hashAlgo, \ENT_QUOTES, 'UTF-8')
             ));

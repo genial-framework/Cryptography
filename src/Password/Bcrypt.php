@@ -76,7 +76,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      * verify().
      *
      * @param string $plaintext The plaintext to verify against hash and rehash if needed.
-     * @param string $hash      The hash the plaintext should mtch up to.
+     * @param string $hash      The hash the plaintext should match up to.
      *
      * @throws LengthException if the password is longer than 72 characters.
      *

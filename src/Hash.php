@@ -39,16 +39,16 @@ class Hash
      */
     public static function cipher($hashAlgo, $data, $rawOutput = self::RAW_OUTPUT)
     {
-        if (self::supportedAlgo($hashAlgo))
+        if (self::supportedAlgo((string) $hashAlgo))
         {
             self::$cachedAlgo = $hashAlgo;
-            return (string) \hash($hashAlgo, $data, $rawOutput);
+            return (string) \hash((string) $hashAlgo, (string) $data, (bool) $rawOutput);
         } else
         {
             throw new Exception\UnexpectedValueException(\sprintf(
                 '`%s` The algorithm is not supported. Passed `%s`.',
                 __METHOD__,
-                \htmlspecialchars($hashAlgo, \ENT_QUOTES, 'UTF-8')
+                \htmlspecialchars((string) $hashAlgo, \ENT_QUOTES, 'UTF-8')
             ));
         }
     }
@@ -64,7 +64,7 @@ class Hash
      */
     public static function getOutputSize($hash)
     {
-        return (int) \mb_strlen($hash, '8bit');
+        return (int) \mb_strlen((string) $hash, '8bit');
     }
     
     /**
@@ -82,9 +82,9 @@ class Hash
         {
             return \true;
         }
-        if (\in_array($algo, Utils::hashAlgos(), \true))
+        if (\in_array((string) $algo, Utils::hashAlgos(), \true))
         {
-            self::$cachedAlgo = $algo;
+            self::$cachedAlgo = (string) $algo;
             return (bool) \true;
         }
         return (bool) \false;

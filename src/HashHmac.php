@@ -40,16 +40,16 @@ class HashHmac
      */
     public static function cipher($hashAlgo, $data, $sharedKey, $rawOutput = self::RAW_OUTPUT)
     {
-        if (self::supportedAlgo($hashAlgo))
+        if (self::supportedAlgo((string) $hashAlgo))
         {
-            self::$cachedAlgo = $hashAlgo;
-            return (string) \hash_hmac($hashAlgo, $data, $sharedKey, $rawOutput);
+            self::$cachedAlgo = (string) $hashAlgo;
+            return (string) \hash_hmac((string) $hashAlgo, (string) $data, (string) $sharedKey, (bool) $rawOutput);
         } else
         {
             throw new Exception\UnexpectedValueException(\sprintf(
                 '`%s` `%s` is not supported.',
                 __METHOD__,
-                \htmlspecialchars($hashAlgo, \ENT_QUOTES, 'UTF-8')
+                \htmlspecialchars((string) $hashAlgo, \ENT_QUOTES, 'UTF-8')
             ));
         }
     }
@@ -65,7 +65,7 @@ class HashHmac
      */
     public static function getOutputSize($hash)
     {
-        return (int) Hash::getOutputSize($hash);
+        return (int) Hash::getOutputSize((string) $hash);
     }
     
     /**
@@ -83,9 +83,9 @@ class HashHmac
         {
             return true;
         }
-        if (\in_array($algo, Utils::hashHmacAlgos(), \true))
+        if (\in_array((string) $algo, Utils::hashHmacAlgos(), \true))
         {
-            self::$cachedAlgo = $algo;
+            self::$cachedAlgo = (string) $algo;
             return (bool) \true;
         }
         return (bool) \false;

@@ -17,8 +17,10 @@ matrix:
     fast_finish: true
 sudo: false
 before_install:
-    - git clone -b stable https://github.com/jedisct1/libsodium.git
-    - cd libsodium && sudo ./configure && sudo make check && sudo make install && cd ..
+    - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.2.0" ]]; then git clone -b stable https://github.com/jedisct1/libsodium.git
+    - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.2.0" ]]; then cd libsodium && sudo ./configure && sudo make check && sudo make install && cd ..
+#   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.2.1" ]]; then git clone -b stable https://github.com/jedisct1/libsodium.git
+#   - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.2.1" ]]; then cd libsodium && sudo ./configure && sudo make check && sudo make install && cd ..
 install:
     - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.2.0" ]]; then pecl install libsodium
     - if [[ ${TRAVIS_PHP_VERSION:0:3} == "7.2.0" ]]; then echo "extension=sodium.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini

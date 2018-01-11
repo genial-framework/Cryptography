@@ -39,7 +39,7 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
             throw new LengthException(\sprintf(
                 '`%s` The cost passed is too low. Passed: `%s`.',
                 __METHOD__,
-                \htmlspecialchars($cost, \ENT_QUOTES, 'UTF-8')
+                \htmlspecialchars((int) $cost, \ENT_QUOTES, 'UTF-8')
             ));
         }
         $this->cost = (int) $cost;
@@ -58,15 +58,15 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      */
     public function cipher($plaintext)
     {
-        if (\mb_strlen($plaintext) > 72)
+        if (\mb_strlen((string) $plaintext) > 72)
         {
             throw new LengthException(\sprintf(
                 '`%s` The password is longer than 72 characters. Password length: `%s`.',
                 __METHOD__,
-                \htmlspecialchars(\mb_strlen($plaintext), \ENT_QUOTES, 'UTF-8')
+                \htmlspecialchars(\mb_strlen((string) $plaintext), \ENT_QUOTES, 'UTF-8')
             ));
         }
-        return (string) \password_hash($plaintext, \PASSWORD_BCRYPT,
+        return (string) \password_hash((string) $plaintext, \PASSWORD_BCRYPT,
         [
             'cost' => $this->cost,
         ]);
@@ -85,28 +85,28 @@ class Bcrypt extends AbstractPasswordHash implements PasswordHashInterface
      */
     public function verify($plaintext, $hash)
     {
-        if (\mb_strlen($plaintext) > 72)
+        if (\mb_strlen((string) $plaintext) > 72)
         {
             throw new LengthException(\sprintf(
                 '`%s` The password is longer than 72 characters. Password length: `%s`.',
                 __METHOD__,
-                \htmlspecialchars(\mb_strlen($plaintext), \ENT_QUOTES, 'UTF-8')
+                \htmlspecialchars(\mb_strlen((string) $plaintext), \ENT_QUOTES, 'UTF-8')
             ));
         }
-        if (\password_verify($plaintext, $hash))
+        if (\password_verify((string) $plaintext, (string) $hash))
         {
-            $temp = $hash;
-            if (\password_needs_rehash($hash, \PASSWORD_BCRYPT,
+            $temp = (string) $hash;
+            if (\password_needs_rehash((string) $hash, \PASSWORD_BCRYPT,
             [
                 'cost' => $this->cost,
             ])) {
-                $hash = $this->cipher($plaintext);
+                $hash = $this->cipher((string) $plaintext);
             }
-            if (!Utils::hashEquals($temp, $hash))
+            if (!Utils::hashEquals((string) $temp, (string) $hash))
             {
                 return (array) [
                     'password_verified' => \true,
-                    'new_hash' => $hash
+                    'new_hash' => (string) $hash
                 ];
             }
             return (array) [

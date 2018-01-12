@@ -40,16 +40,17 @@ class HashHmac
      */
     public static function cipher($hashAlgo, $data, $sharedKey, $rawOutput = self::RAW_OUTPUT)
     {
-        if (self::supportedAlgo((string) $hashAlgo))
+        $hashAlgo = (string) $hashAlgo;
+        if (self::supportedAlgo($hashAlgo))
         {
-            self::$cachedAlgo = (string) $hashAlgo;
-            return (string) \hash_hmac((string) $hashAlgo, (string) $data, (string) $sharedKey, (bool) $rawOutput);
+            self::$cachedAlgo = $hashAlgo;
+            return (string) \hash_hmac($hashAlgo, (string) $data, (string) $sharedKey, (bool) $rawOutput);
         } else
         {
             throw new Exception\UnexpectedValueException(\sprintf(
                 '`%s` The algorithm is not supported. Passed `%s`.',
                 __METHOD__,
-                \htmlspecialchars((string) $hashAlgo, \ENT_QUOTES, 'UTF-8')
+                \htmlspecialchars($hashAlgo, \ENT_QUOTES, 'UTF-8')
             ));
         }
     }
@@ -79,13 +80,14 @@ class HashHmac
      */
     public static function supportedAlgo($algo)
     {
+        $algo = (string) $algo;
         if ($algo === self::$cachedAlgo)
         {
             return true;
         }
-        if (\in_array((string) $algo, Utils::hashHmacAlgos(), \true))
+        if (\in_array($algo, Utils::hashHmacAlgos(), \true))
         {
-            self::$cachedAlgo = (string) $algo;
+            self::$cachedAlgo = $algo;
             return (bool) \true;
         }
         return (bool) \false;
